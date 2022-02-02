@@ -1,0 +1,65 @@
+@charset "utf-8";
+
+html {font-size: 20px;}
+body {font-size: 1rem;}
+
+header {position: relative; background: #f6f5ef; border-top: 2px solid #000;}
+header > div:first-child { position: relative; width: 54rem; height: 6rem; margin: 0 auto;}
+header > div:first-child h1 {float: left; padding: 1.1rem 0 1.2rem;}
+header > div:first-child nav { float: right; padding: 2.65rem 0 0; line-height: 100%;}
+header > div:first-child nav > ul > li  { float: left;}
+header > div:first-child nav > ul > li a:hover {background: #2c2a29; color: #79a42c; text-decoration: underline;}
+header > div:first-child nav > ul > li > a  { display: block; height: 52px; padding: .75rem 1.25rem 0; font-size: 0.7rem; color: #333;}
+header > div:first-child .spot { position: absolute; right: 0; top: 1rem; }
+header > div:first-child .spot li {position: relative; float: left;}
+header > div:first-child .spot li a { font-size: 0.7rem; color: #333; padding: 0 .75rem; line-height: 100%; }
+header > div:first-child .spot li ~li a:after {content: ''; position: absolute; display: block; left: 0; top: 50%; transform: translateY(-50%); width: 1px; height: .6rem; background: #e5e5e5;}
+
+header > div .spot li:last-child a:after {display: none;}
+header > div .spot li:last-child a {width: 1.7rem; height: 1.7rem; line-height: 1.7rem; background: #fff; text-align: center;  border: 1px solid #ccc; display: block;font-size: 0; color: transparent; padding: 0; margin: -.5rem 0 0; border-radius: .25rem;}
+header > div .spot li:last-child a:before {content: "\e97a"; font-family: 'xeicon'; font-size: 1.2rem; color: #000; }
+
+/*디스플레이 플렉스 연습 */
+/*
+.subnav_wrap_bg { float: left; width: 100%;  height: 500px; background: #2c2a29;}
+header .subnav_wrap { width: 1080px; height: 500px; margin: 0 auto; display: flex; justify-content : space-between; }
+header .subnav_wrap > li {padding: 24px 24px 0; flex: 1;}
+header .subnav_wrap > li > a:first-child {color: #fff; font-size: 16px; display: block; padding-bottom: 15px; }
+header .subnav_wrap > li > ul > li {padding: 5px 0;}
+header .subnav_wrap > li > ul > li >a {color: #818181; font-size: 14px;  }
+header .subnav_wrap .subnav_wrap_coffee > a {}
+*/
+
+.subnav_wrap_bg {position: relative; z-index: 10; float: left; width: 100%;  background: #2c2a29; display: none;}
+header .subnav_wrap { position: relative; z-index: 10;  width: 1080px; height: 500px; margin: 0 auto;  }
+header .subnav_wrap > li {margin: 24px 0 0; width: 216px; float: left; height: 250px;}
+header .subnav_wrap > li:last-child {height: 0;}
+header .subnav_wrap > li > a:first-child {color: #fff; font-size: 16px; display: block; padding-bottom: 15px; }
+header .subnav_wrap > li > ul > li {padding: 5px 0;}
+header .subnav_wrap > li > ul > li >a {color: #818181; font-size: 14px;  }
+
+.subnav_wrap_bg >.gnb_sub_txbg { background-image: url(images/gnb_sub_txbg.jpeg); width: 100%; overflow: hidden;} 
+.subnav_wrap_bg >.gnb_sub_txbg .coffee_find a, 
+.subnav_wrap_bg >.gnb_sub_txbg .coffee_find p { color: #fff;} 
+.subnav_wrap_bg >.gnb_sub_txbg .coffee_find { width: 1080px; margin: 0 auto;}
+.subnav_wrap_bg >.gnb_sub_txbg .coffee_find ul {float: left;  margin: 30px 0 15px 0; }
+.subnav_wrap_bg >.gnb_sub_txbg .coffee_find ul > li {margin-bottom: 15px;}
+.subnav_wrap_bg >.gnb_sub_txbg .coffee_find ul > li > a {color: #818181; }
+.subnav_wrap_bg >.gnb_sub_txbg .coffee_find ul > li > p {color: #79a42c; }
+
+
+main .main_bg {background-image:url(images/2021_summer1_bg.jpeg); width: 100vw; height: 647px;}
+main .main_bg .main {position: relative; width: 1080px; height: 100%; margin: 0 auto; }
+main .main_bg .main .slogan {position: absolute; top: 55px; left: 0; }
+main .main_bg .main .slogan button {display: block; font-size: 15px; margin-top: 30px; width: 120px; border: 2px solid #000; background: transparent; line-height: 35px; border-radius: 5px;}
+main .main_bg .main .coldbrew { position: absolute; width: 160px;  left: 390px; bottom: 80px; }
+main .main_bg .main .coldbrew:after { }
+main .main_bg .main .coldbrew h3 {width: 100%; font-size: 17px; margin: 0 auto; text-align: center; font-weight: bold; line-height: 1.2; padding-bottom: 5px;   }
+main .main_bg .main .coldbrew p {width: 100%; font-size: 18px; text-align: center; font-weight: bold; border-top: 1px solid #000; padding: 5px 0 10px 0;}
+
+
+
+
+
+
+.clear:after {content: ''; display: block; clear: both;}

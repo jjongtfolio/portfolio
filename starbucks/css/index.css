@@ -1,0 +1,197 @@
+@charset "utf-8";
+
+html {font-size: 20px;}
+body {font-size: 1rem; font-family: 'nbg', '맑은 고딕', HelveticaNeue, DroidSans, Sans-serif, Helvetica;}
+a:hover {text-decoration: underline;}
+
+
+
+
+
+header {position: fixed; width: 100%; background: #f6f5ef; border-top: 2px solid #000; z-index: 9999;}
+/*header .fixed {position: relative; background: #f6f5ef; border-top: 2px solid #000;}*/
+header > .header_wrap { position: relative; width: 54rem; height: 6rem; margin: 0 auto;}
+header > .header_wrap h1 {float: left; padding: 1.1rem 0 1.2rem;}
+header > .header_wrap nav { font: normal 13px Avenir, Arial, georgia; float: right; padding: 2.65rem 0 0; line-height: 100%;}
+
+header > .header_wrap nav > ul > li  { float: left;}
+header > .header_wrap nav > ul > li a:hover {background: #2c2a29; color: #79a42c; text-decoration: underline;}
+header > .header_wrap nav > ul > li > a  { display: block; height: 52px; padding: .75rem 1.25rem 0; font-size: 0.7rem; color: #333;}
+header > .header_wrap .spot {font: normal 0.7rem Avenir, Arial, georgia; position: absolute; right: 0; top: 1rem; }
+header > .header_wrap .spot li {position: relative; float: left;}
+header > .header_wrap .spot li a { font-size: 0.6rem; color: #333; padding: 0 .75rem; line-height: 100%; }
+header > .header_wrap .spot li ~li a:after {content: ''; position: absolute; display: block; left: 0; top: 50%; transform: translateY(-50%); width: 1px; height: .6rem; background: #e5e5e5;}
+
+header > div .spot li:last-child a:after {display: none;}
+header > div .spot li:last-child a {width: 1.7rem; height: 1.7rem; line-height: 1.7rem; background: #fff; text-align: center;  border: 1px solid #ccc; display: block;font-size: 0; color: transparent; padding: 0; margin: -.5rem 0 0; border-radius: .25rem;}
+header > div .spot li:last-child a:before {content: "\e97a"; font-family: 'xeicon'; font-size: 1.2rem; color: #000; }
+
+/*
+.subnav_wrap_bg { float: left; width: 100%;  height: 500px; background: #2c2a29;}
+header .subnav_wrap { width: 1080px; height: 500px; margin: 0 auto; display: flex; justify-content : space-between; }
+header .subnav_wrap > li {padding: 24px 24px 0; flex: 1;}
+header .subnav_wrap > li > a:first-child {color: #fff; font-size: 16px; display: block; padding-bottom: 15px; }
+header .subnav_wrap > li > ul > li {padding: 5px 0;}
+header .subnav_wrap > li > ul > li >a {color: #818181; font-size: 14px;  }
+header .subnav_wrap .subnav_wrap_coffee > a {}
+*/
+.subnav_wrap_bg {position: relative; z-index: 10; left: 0; top: 0; width: 100vw;  background: #2c2a29; display: none;  }
+.subnav_wrap_bg.active1 {display: block;}
+header .subnav_wrap { position: relative; z-index: 10;  width: 1080px; height: 550px; margin: 0 auto;  }
+header .subnav_wrap > li {margin: 24px 0 0; width: 216px; float: left; height: 250px;}
+header .subnav_wrap > li {margin: 24px 0 0; width: 216px; float: left; height: 250px;}
+header .subnav_wrap > li:last-child {height: 0;}
+header .subnav_wrap > li > a:first-child {color: #fff; font-size: 16px; display: block; padding-bottom: 15px; }
+header .subnav_wrap > li > ul > li {padding: 5px 0;}
+header .subnav_wrap > li > ul > li >a {color: #818181; font-size: 14px;  }
+
+.subnav_wrap_bg >.gnb_sub_txbg { background-image: url(../images/gnb_sub_txbg.jpeg); width: 100%; overflow: hidden;} 
+.subnav_wrap_bg >.gnb_sub_txbg .coffee_find a, 
+.subnav_wrap_bg >.gnb_sub_txbg .coffee_find p { color: #fff;} 
+.subnav_wrap_bg >.gnb_sub_txbg .coffee_find { width: 1080px; margin: 0 auto;}
+.subnav_wrap_bg >.gnb_sub_txbg .coffee_find ul {float: left;  margin: 30px 0 15px 0; }
+.subnav_wrap_bg >.gnb_sub_txbg .coffee_find ul > li {margin-bottom: 15px;}
+.subnav_wrap_bg >.gnb_sub_txbg .coffee_find ul > li > a {color: #818181; }
+.subnav_wrap_bg >.gnb_sub_txbg .coffee_find ul > li > p {color: #79a42c; }
+
+
+
+
+
+
+
+main {padding-top: 6rem;}
+main .main_bg {background:url(../images/2021_summer1_bg.jpeg) no-repeat; margin: 0;  height: 32.3rem;}
+main .main_wrap {position: relative; width: 54rem; height: 100%; margin: 0 auto;}
+main .main_wrap .slogan {position: absolute; top: 2.475rem; left: 0; }
+main .main_wrap .slogan img {opacity: 0; animation: slogan 1s 1s 1 both;}
+main .main_wrap .slogan button {display: block; font-size: 0.75rem; margin-top: 1.5rem; width: 6rem; border: 2px solid #000; background: transparent; line-height: 35px; border-radius: 5px; opacity: 0; animation: slogan 1s 1s 1 both;}
+main .main_wrap .coldbrew { position: absolute; left: 19.5rem; bottom: 4rem; animation: slogan 1s 1s 1 both; }
+main .main_wrap .coldbrew:after { background: url(../images/2021_summer1_coldbrew_tit.png) no-repeat; display: block; width: 40%; height: 4rem;  content: ''; position: absolute;  left: 0.5rem; top: -4.5rem; }
+main .main_wrap .bananacream { position: absolute; right: -40px; bottom: 145px; animation: slogan 1s 1s 1 both; }
+main .main_wrap .bananacream:after { background: url(../images/2021_summer1_blended_tit.png) no-repeat; display: block; width: 50%; height: 4rem;  content: ''; position: absolute;  left: -7%; bottom: -4.25rem; }
+main .main_wrap .shiningmuscatade { position: absolute; right: -200px; bottom: 80px;animation: slogan 1s 1s 1 both; }
+main .main_wrap .shiningmuscatade:after { background: url(../images/2021_summer1_ade_tit.png) no-repeat; display: block; width: 40%; height: 4rem;  content: ''; position: absolute;  left: 2%; top: -4.75rem; }
+
+/*line-notice*/
+
+section.line_notice { height: 60px; background: linear-gradient(to right, #111111, #111111 55.5%, #f5f4ee 44.5%, #f5f4ee);}
+section.line_notice .line_notice_bg { width: 54rem; margin: 0 auto; }
+/*section.line_notice .line_notice_bg {width: 54rem; background: url(images/line_notice_bg.jpeg); margin: 0 auto; }*/
+section.line_notice .line_notice_left {float: left; width: 50%; height: 60px; line-height: 60px;   }
+section.line_notice .line_notice_left .line_notice_left_tit_wrap {position: relative;}
+section.line_notice .line_notice_left .line_notice_left_tit_wrap h2 {float: left; color: #fff; margin-right: 15px; font-size: 18px; }
+section.line_notice .line_notice_left .line_notice_left_tit_wrap p {float: left; color: #fff; font-size: 15px; }
+section.line_notice .line_notice_left .line_notice_left_tit_wrap button {position: absolute; z-index: 10; top: 50%; right: -80px; transform: translateY(-50%); background: #fff;  border-radius: 100%; color: transparent; font-size: 0; z-index: 10; }
+section.line_notice .line_notice_left .line_notice_left_tit_wrap button a {display: inline-block; width: 30px; height: 30px; line-height: 30px;}
+section.line_notice .line_notice_left .line_notice_left_tit_wrap button a:after {content: '\e913'; font-size: 14px; color: #000; font-family: 'xeicon'; }
+
+
+section.line_notice .line_notice_right {position: relative; float: left; width: 50%; height: 60px;  color: #fff; }
+section.line_notice .line_notice_right .line_notice_right_tit_wrap { float: right; position: absolute; top: 50%; transform: translateY(-50%); right: 0; }
+section.line_notice .line_notice_right .line_notice_right_p {float: left; color: #232323; height: 30px; line-height: 30px; margin-right: 70px; font-size: 18px; }
+section.line_notice .line_notice_right .line_notice_right_tit_wrap button { background: #fff; width: 30px; height: 30px; line-height: 30px; border-radius: 100%; color: transparent; font-size: 0;}
+section.line_notice .line_notice_right .line_notice_right_tit_wrap button:after {content: '\e913'; font-size: 14px; color: #000; font-family: 'xeicon'; }
+
+section.starbucks_rewards {background: #1e3932; }
+section.starbucks_rewards .starbucks_rewards_bg {position: relative; width: 54rem; height: 238px; margin: 0 auto; padding-top: 30px; box-sizing: border-box; }
+
+section.starbucks_rewards .starbucks_rewards_bg .rewards-logo {float: left; margin-left: 50px;}
+section.starbucks_rewards .starbucks_rewards_bg .rewards-logo img {width: 175px; height: 152px;}
+section.starbucks_rewards .starbucks_rewards_bg .starbucks_rewards_top { float: left; margin-left: 35px; }
+section.starbucks_rewards .starbucks_rewards_bg .starbucks_rewards_top_left:after {content: ''; width: 74%; height: 2px; background: #4b615b; position: absolute; top: 56%; }
+section.starbucks_rewards .starbucks_rewards_bg .starbucks_rewards_top .starbucks_rewards_top_left h3 { font-size: 22px; color: #fff;}
+section.starbucks_rewards .starbucks_rewards_bg .starbucks_rewards_top .starbucks_rewards_top_left p { font-size: 18px; color: #fff;}
+
+section.starbucks_rewards .starbucks_rewards_bg .starbucks_rewards_top .starbucks_rewards_top_right {float: right; position: absolute; top: 76px; right: 20px;}
+section.starbucks_rewards .starbucks_rewards_bg .starbucks_rewards_top .starbucks_rewards_top_right button:first-child { background: #00704a; font-size: 16px; color: #fff; width: 92px; height: 38px; line-height: 38px; margin-right: 9px; border-radius: 5px;}
+section.starbucks_rewards .starbucks_rewards_bg .starbucks_rewards_top .starbucks_rewards_top_right button:last-child {background: transparent; font-size: 16px; color: #fff; width: 76px; line-height: 34px; border: 2px solid #fff; border-radius: 5px;}
+
+
+section.starbucks_rewards .starbucks_rewards_bg .starbucks_rewards_bottom { float: left; margin-left: 35px; margin-top: 35px;}
+section.starbucks_rewards .starbucks_rewards_bg .starbucks_rewards_bottom .starbucks_rewards_bottom_left {float: left; font-size: 14px; color: #fff;}
+section.starbucks_rewards .starbucks_rewards_bg .starbucks_rewards_bottom .starbucks_rewards_bottom_right {float: right; position: absolute; bottom: 40px; right: 20px; } 
+section.starbucks_rewards .starbucks_rewards_bg .starbucks_rewards_bottom .starbucks_rewards_bottom_right button {width: 180px; line-height: 34px; border-radius: 5px; border: 2px solid #fff;  color: #fff; background: transparent;} 
+
+
+section.summer_bg_indonesia {background: url(../images/2021_summer1_bean_bg.jpeg) center / cover; height: 573px; }
+section.summer_bg_indonesia .summer_bg_indonesia_wrap {position: relative; width: 54rem; margin: 0 auto;}
+section.summer_bg_indonesia .summer_bg_indonesia_wrap .summer_bg_indonesia_img {float: left; margin-left: 200px; margin-top: 98px;}
+section.summer_bg_indonesia .summer_bg_indonesia_wrap .summer_bg_indonesia_tit {float: left; position: absolute; top: 188px; right: 142px;  }
+section.summer_bg_indonesia .summer_bg_indonesia_wrap .summer_bg_indonesia_tit button {display: block; margin-top: 30px; width: 121px; line-height: 34px; background: transparent; color: #211513; border: 2px solid #211513; border-radius: 5px; font-weight: bold;}
+
+section.sundried_brazil {background: url(../images/reserve_sundried_brazil_bg2.jpeg) center/cover; height: 400px; position: relative; overflow: hidden; }
+section.sundried_brazil:after {background: url(../images/reserve_sundried_brazil_bg_shape.png) no-repeat left top; height: 130px; width: 214px; content: ''; position: absolute; left: 0; top: 47px;  }
+section.sundried_brazil .sundried_brazil_wrap { width: 54rem; margin: 0 auto; height: 400px;}
+section.sundried_brazil .sundried_brazil_wrap .sundried_brazil_title { padding-top: 94px;    }
+section.sundried_brazil .sundried_brazil_wrap .sundried_brazil_title > button {position: relative; z-index: 10; display: block; width: 122px; line-height: 34px; border: 2px solid #805930; border-radius: 5px; background: transparent; margin-left: 270px; margin-top: 20px;}
+section.sundried_brazil .sundried_brazil_wrap .sundried_brazil_title > button > a {color: #805930;  font-size: 16px;}
+section.sundried_brazil .sundried_brazil_wrap .sundried_brazil_animi img {width: 100%; height: 100%; position: absolute; top: 0; left: 120px; }
+
+
+section.pickyourfav {background: url(../images/fav_prod_bg_new.jpeg) no-repeat fixed; background-size:auto 100%; height: 800px;  } /*백그라운드 참고 예시 , 사이즈 및 픽스드 공부해야함*/
+section.pickyourfav .pickyourfav_wrap {width: 54rem; margin: 0 auto; position: relative; }
+section.pickyourfav .pickyourfav_wrap .pickyourfav_pick {background: url(../images/fav_prod_txt01.png) no-repeat; width: 258px; height: 204px; position: absolute; top: 120px;  left: 106px;}
+section.pickyourfav .pickyourfav_wrap .pickyourfav_tit {background: url(../images/fav_prod_txt02.png) no-repeat; width: 362px; height: 156px; position: absolute; top: 370px; left: 0;}
+section.pickyourfav .pickyourfav_wrap .pickyourfav_cake {background: url(../images/2021_summer1_fav.png) no-repeat; width: 672px; height: 458px; position: absolute; top: 115px; right: -100px; }
+section.pickyourfav .pickyourfav_wrap .pickyourfav_btn { position: absolute; left: 236px; top: 570px;   }
+section.pickyourfav .pickyourfav_wrap .pickyourfav_btn button {width: 121px; line-height: 34px;border: 2px solid #fff; border-radius: 5px; text-align: center; background: transparent;}
+section.pickyourfav .pickyourfav_wrap .pickyourfav_btn button a {color: #fff; font-size: 15px; }
+
+
+
+section.reserve {background: #fff; overflow: hidden; }
+section.reserve .reserve_wrap {position: relative; width: 62rem; height: 695px; margin: 0 auto;  }
+section.reserve .reserve_wrap:before {content: ''; width: 90%; height: 1px; position: absolute; bottom: 265px; left: 110px; background: #d0d0cf;}
+section.reserve .reserve_wrap:after {content: ''; width: 1px; height: 445px; position: absolute; top: 140px; left: 560px; background: #d0d0cf;}
+section.reserve .reserve_wrap .reserve_left {background: url(../images/reserve_visual_pc.png) no-repeat; width: 469px; height: 515px; position: absolute; top: 90px; left: 80px; }
+section.reserve .reserve_wrap .reserve_right {background: url(../images/reserve_text_pc.png) no-repeat; width: 565px; height: 84px; position: absolute; top: 270px; right: 80px; } 
+section.reserve .reserve_wrap .reserve_btn {background: url(../images/btn_magazine_pc.png) no-repeat top center; position: absolute; bottom: 225px; right: 355px; width: 287px; height: 17px;}
+section.reserve .reserve_wrap .reserve_btn a { display: block;  } 
+/*section.reserve .reserve_wrap .reserve_btn a:hover {background: #976d3f;  } */
+
+section.starbucks_store {background: url(../images/store_bg.jpg) no-repeat;  background-size: 100% auto; height: 400px; position: relative; overflow: hidden;}
+section.starbucks_store .starbucks_store_wrap {width: 54rem; height: 100%; margin: 0 auto; position: relative;}
+section.starbucks_store .starbucks_store_wrap .starbucks_store_bg_store {background: url(../images/store_exp_img02.png) no-repeat; width: 366px; height: 312px;  position: absolute; top: 0; left: 70px;  }
+section.starbucks_store .starbucks_store_wrap .starbucks_store_bg_drive {background: url(../images/store_exp_img01.png) no-repeat; width: 228px; height: 228px; position: absolute; top: 150px; left: 300px;}
+section.starbucks_store .starbucks_store_wrap .starbucks_store_bg_coffee {background: url(../images/store_exp_img03.png) no-repeat; width: 343px; height: 142px; position: absolute; top: -60px; left: 430px;}
+section.starbucks_store .starbucks_store_wrap .starbucks_store_bg_il {background: url(../images/store_exp_img04.png) no-repeat; width: 230px; height: 102px; position: absolute; bottom:0; right: -80px;}
+section.starbucks_store .starbucks_store_wrap .starbucks_store_right .starbucks_store_txt1 {background: url(../images/store_txt01.png) no-repeat; width: 385px; height: 54px; position: absolute; top: 102px; left: 658px;}
+section.starbucks_store .starbucks_store_wrap .starbucks_store_right .starbucks_store_txt2 {background: url(../images/store_txt02.png) no-repeat; width: 366px; height: 61px; position: absolute; top: 170px; left: 658px;}
+section.starbucks_store .starbucks_store_wrap .starbucks_store_right .starbucks_store_btn {position: absolute; bottom: 104px; left: 663px; width: 121px; height: 34px; line-height: 34px; border: 2px solid #000; border-radius: 3px; }
+section.starbucks_store .starbucks_store_wrap .starbucks_store_right .starbucks_store_btn a {display: block; width: 100%; height: 100%; text-align: center; font-size: 16px; transition: background .7s, color .7s;}
+section.starbucks_store .starbucks_store_wrap .starbucks_store_right .starbucks_store_btn a:hover {background: #222; color: #fff;  }
+
+/*footer 공통*/
+footer {background: #2C2A29; }
+footer .footer_menu .footer_menu_wrap { position: relative; background: url(../images/footer_logo.png) no-repeat right 30px; left: 50%; transform: translateX(-50%); display: inline-block;} 
+footer .footer_menu .footer_menu_wrap ul { float: left; width: 220px; padding-top: 35px;  } 
+footer .footer_menu .footer_menu_wrap ul li { font-size: 14px; margin-bottom: 12px; } 
+footer .footer_menu .footer_menu_wrap ul li.footer_menu_tit { font-size: 16px; margin-bottom: 20px; } 
+footer .footer_menu .footer_menu_wrap ul li a { color: #fff;   } 
+footer .footer_menu .footer_menu_wrap ul li a:hover {text-decoration: underline;} 
+
+footer .footer_award {background: #282828; width: 100%; overflow: hidden;}
+footer .footer_award .footer_award_in {width: 1200px; margin: 0 auto;}
+footer .footer_award .footer_award_in ul {padding: 10px 0 30px 0; width: 100%; position: relative; top: 0; left: 30px;}
+footer .footer_award .footer_award_in ul li {float : left; margin-right: 10px;}
+footer .footer_award .footer_award_in ul li img {width: 180px;}
+
+footer .footer_copyright {width: 100%; margin: 30px 0 0 0; text-align: center; }
+footer .footer_copyright > a {color: #fff; font-size: 12px; margin: 0 12px; position: relative;}
+footer .footer_copyright > a:first-child {color: #11a04b;}
+footer .footer_copyright > a:after {content: ''; width: 1px; height: 100%; position: absolute; top: 0; right: -12.5px; background: #383837;}
+footer .footer_copyright .footer_map > a {display: inline-block; width: 110px; height: 30px; line-height: 30px; border: 2px solid #fff; border-radius: 3px; color: #fff; font-size: 13px; margin: 13px 4px; }
+
+footer .footer_copyright .footer_address {font-size: 12px;}
+footer .footer_copyright .footer_address > p  { display: inline-block; margin: 13px 8px 24px 8px;}
+footer .footer_copyright .footer_address > span  {display: block; padding-bottom: 46px;}
+
+
+@keyframes slogan {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+
+.clear:after {content: ''; display: block; clear: both;}
