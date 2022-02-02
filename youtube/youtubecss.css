@@ -1,0 +1,138 @@
+:root {
+    --basic-color: #fff;
+    --sub-color: red;
+    
+}
+html {
+    font-size: 16px;
+    width: 100%;
+}
+
+header {
+    width: 100%;
+    background-color: #000;
+    height: 50px;
+}
+button { border-radius: 10px; color: white; background: #000;}
+.logo {
+    font-size: 1.3rem;
+    position: absolute;
+    left: 3%;
+    top: 2.3%;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+}
+.logo i {
+    color: red;
+}
+.icons {
+    font-size: 1.3rem;
+    position: absolute;
+    top: 2.3%;
+    right: 4%;
+    color: #fff;
+}
+
+video {width: 100%;}
+
+section.info .matadata {
+    margin-left: 3%;
+    margin-top: 3%;
+    font-family: 'Poppins', sans-serif;
+}
+section.info .tag li {
+    float: left;
+    color: blue;
+    margin-right: 2%;
+    font-size: 0.8rem;
+    
+}
+section.info .tag:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+section.info .titleAndButton {position: relative;}
+section.info .titleAndButton .title {
+    display: inline-block;
+    font-size: 1rem;
+    width: 94%;
+    margin: 10px 0;
+   
+}
+section.info .titleAndButton .more { position: absolute; top: 0; right: 0px;}
+
+section.info .matadata .views {
+    font-size: 1rem;
+    color:red;
+}
+section.info ul.actions {width: 100%; margin-top: 2%; margin-bottom: 2%; padding-bottom: 2%; }
+section.info ul.actions li {float: left; margin-right: 10%; }
+section.info ul.actions li:nth-of-type(1) {margin-left: 10%;}
+section.info ul.actions li button {font-size: 0.6rem;}
+section.info ul:after { content: ''; display: block; clear: both;}
+
+section.info .channel { position: relative; border-bottom: 2px solid black; border-top: 2px solid black; padding: 1%;font-family: 'Poppins', sans-serif; }
+section.info .channel img {
+    width: 36px;
+    border-radius: 50%;
+}
+section.info .channel .channelname {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 7%;
+    transform: translate(0, -50%);
+}
+
+section.info .channel .channelname .subscribe_name {
+    display: block;
+}
+
+section.info .channel button.subscribe {
+/*    display: none;*/
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    right: 0;
+    color: #fff;
+    border: 0;
+    border-radius: 10px;
+    font-weight: bold;
+    background: #000;
+/*    opacity: 0.7;*/
+}
+section.Upnext .sub_top {
+    color: var(--sub-color);
+    font-size: 1.2rem;
+    display: inline-block;
+    margin: 2% 1%;
+    font-family: 'Poppins', sans-serif;
+
+} 
+
+section.Upnext ul {
+    width: 100%; font-family: 'Poppins', sans-serif;
+}
+section.Upnext ul li {
+    height: 13vh;
+    width: 100%;
+}
+section.Upnext ul li.item img {
+    width: 25%;
+}
+
+section.Upnext ul li .iteminfo {display: inline-block; width: 60%; margin-left: 4%; font-size: 1rem;}
+section.Upnext ul li .iteminfo .sub_name { display: block; margin: 10px 0; color: darkgray;}
+section.Upnext ul li .iteminfo .sub_views { display: block; color: darkgray;}
+section.Upnext ul li .moreBtn {position: absolute; right: 0; border: 0; outline: 0;}
+
+@media screen and (min-width: 768px) {
+    section.info,    
+    section.Upnext {width: calc(50% - 30px); float: left;}
+    section.info {margin-right: 40px; margin-left: 20px;}
+    section.info ul.actions li {float: left; margin-right: 5%; }
+    section.info ul.actions li:nth-of-type(1) {margin-left: 10%;}
+    
+    
+}

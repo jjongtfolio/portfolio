@@ -1,0 +1,44 @@
+header {width: 100%; border-bottom: 1px solid #e6e6e6;}
+header .top {width: 960px; margin: 0 auto; height: 79px;}
+header .logo {margin-left: 20px; margin-top: 15px; float: left; margin-right: 62px; }
+header .logo img {width: 52px; height: 45px;}
+header nav > ul.top_nav {float: left; font-size: 18px; padding-top: 36px; line-height: 1; }
+header nav ul li {float: left; margin-left: 43px; line-height: 1; color: #1a1a1a; font: '돋움'; }
+header nav ul li:nth-child(5) {position: relative; margin-left: 82px;}
+header nav ul li:nth-child(5):before { position: absolute; top: -17px; left: -39px; content: ''; width: 1px; height: 40px; line-height: 40px; background: #eee;}
+header nav .lang li {position: relative;}
+header nav .lang li:before {content: ''; width: 3px; height: 3px; border-radius: 3px; background: #000; position: absolute; top: 4px; left: -5px;}
+header nav .lang { float: right; color: #eee; font-size: 9px; padding-top: 39px; height: 9px; line-height: 9px;}
+header nav .lang:after {content: url(img/down.png); padding: 0 20px 0 15px;  }
+header nav .lang li a {color: #555;}
+
+section.banner {position: relative; width: 1660px; height: 560px; margin: 0 auto; background: url(img/banner.jpg);}
+section.banner .banner_bg {position: absolute; top: 0; width: 1660px; height: 47px; background-color: #eef0f1; opacity: 0.7;}
+section.banner ul { height: 47px; line-height: 47px; margin: 0 auto; width: 360px;}
+section.banner .banner_nav li { float: left; font-size: 12px; height: 47px; margin-right: 41px;}
+section.banner .banner_nav li:last-child { margin-right: 0;}
+
+section.banner .banner_txt {width: 960px; margin: 0 auto; padding-top: 121px; color: #fff;}
+section.banner .banner_txt h2 {font-size: 22px; padding: 0 0 15px 0;}
+section.banner .banner_txt h3 {font-size: 33px; line-height: 39px; font-weight: normal; margin-bottom: 45px;}
+section.banner .banner_txt p {width: 72px; font-size: 13px; border-bottom: 1px solid #fff; float: left;}
+section.banner .banner_txt img {margin-left: 10px;}
+
+section.main_txt                 {width: 960PX; margin: 0 AUTO; margin-bottom: 143px;}
+section.main_txt .main_txt2      {margin-top: 80px; float: left;}
+section.main_txt .main_txt2 h3   {line-height: 1; font-size: 22px; margin-bottom: 29px;}
+section.main_txt .main_txt2 p    {font-size: 14px; line-height: 21px; margin-bottom: 32px; }
+section.main_txt .main_txt2 .ONLYONE p    {margin-bottom: 0px; }
+section.main_txt .img    {margin-top: 80px; vertical-align: top; float: right; margin-right: 14px;}
+
+section.ceo {width: 1660px; margin: 0 auto;}
+section.ceo .ceo_txt {width: 960px; margin: 0 auto; position: relative;}
+section.ceo .ceo_bg {background: url(img/ceo.jpg) no-repeat; height: 491px; } 
+section.ceo h4 {line-height: 1; font-size: 21px; color: #FFF; padding-top: 80px; padding-bottom: 38px;  } 
+section.ceo .ceo_lee{ margin-left: 37px; float: left; width: 503px; height: 312px; box-sizing: border-box; border: 1px solid #bfbebd; }
+section.ceo .ceo_lee p {font-size: 25px; line-height: 35px;  color: #fff; text-align: center; padding-top: 59px; padding-bottom: 34px; }
+section.ceo button {display: block; margin: 0 auto; background: none; padding: 0;}
+section.ceo a {font-size: 14px; color: #fff;}
+
+section.ceo .ceo_son   {width: 374px; height: 392px; box-sizing: border-box; border: 1px solid #bfbebd; float: left; position: absolute; top: 40px; right: 30px; }
+section.ceo .ceo_son p {font-size: 25px; line-height: 35px;  color: #fff; text-align: center; padding-top: 121px; padding-bottom: 35px;}

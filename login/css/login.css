@@ -1,0 +1,28 @@
+.wrap {width: 503px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+.wrap h1 {padding: 0 0 82px 0; font-size: 42px; color: #6D6FC7; text-align: center; line-height: 1; text-transform: uppercase; letter-spacing: -5.2px; }
+.wrap h1 span { display: block; font-size: 32px; color: #F07BAF; letter-spacing: 1px; font-weight: normal;  }
+.wrap label {position: relative;padding: 0 0 0 50px; font-size: 22px; color: #707070; }
+.wrap label[for="email"] { background: url(../img/ico_per.png)no-repeat 15px center;} 
+.wrap label[for="password"] {background: url(../img/lcolo.png) no-repeat 15px center;} 
+.wrap input {height: 0; border-top: 2px solid #000;}
+.wrap input:focus {height: 40px;}
+.wrap input[for="password"]:focus + .wrap label[for="password"] {background: url(ico_per.png); display: none;}
+.wrap li ~ li {padding: 33px 0 0 0;}
+
+.wrap button {position: relative; width: 100%; height: 79px; background: #6D6FC7; text-align: center; color: #fff; font-size: 22px; margin-top: 60px; border-radius: 11px; }
+
+.wrap button:before {position: absolute; z-index: -1; top: 0; left: 0; content: ''; width: 176px; height: 70px; background: #6D6FC7; opacity: 0.68; filter: blur(34px); }
+.wrap button:after {position: absolute; z-index: -2; content: ''; width: 246px; height: 98px; background: #FFACE0; opacity: 0.68; filter: blur(34px); }
+
+.wrap button:hover:before { animation: blur 2s infinite linear;}
+.wrap button:hover:after { animation: blur 2s infinite linear;}
+
+@keyframes blur {
+    0% {transform: scale(1) translateY(0px);}
+    50% {transform: scale(2) translateY(-50px);}
+    100% {transform: scale(1) translateY(0px);}
+}
+
+
+
+
