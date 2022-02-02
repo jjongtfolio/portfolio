@@ -1,0 +1,1232 @@
+@charset "utf-8"; /* 인코딩 설정(캐릭터셋) */
+@import url(http://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css); /* 외부 css 호출 */
+@font-face {
+	font-family:nbgR;
+	src:url(fonts/NanumBarunGothic.eot?#iefix) format("embeded-opentype");
+	src:url(fonts/NanumBarunGothic.woff) format("woff");
+}
+/*reset*/
+*		{ margin:0; padding:0; box-sizing:border-box; font-family:nbgR; }
+ul,ol 	{ list-style:none; }
+hr 		{ display:none; }
+h1 		{ margin:0; }
+a 		{ text-decoration:none; }
+button 	{ border:0; background:none; text-indent:-9999px; }
+img 	{ border:0; }
+html 	{ font-size:0.625em; }/* 10px (html 기본 폰트 16px) */
+/*
+1em = 16px
+.5em = 8px
+.25em = 4px
+0.125em = 2px
+
+1rem = 10px
+1.7rem = 17px
+*/
+body 	{ font-family:Arial, "맑은 고딕", sans-serif; line-height:1; }
+.blind 	{ position:absolute; top:-9999px; left:-9999px; }
+.clear:after		{ content:''; display:block; clear:both; }
+.pc 	{ display:none; }
+
+
+/* header:s */
+.navWrap		{ position:fixed; top:0; left:0; width:100%; background:#fff; height:75px; z-index:1; }
+h1 				{ position:absolute; left:50%; top:21px; width:90px; margin-left:-45px; /*transform:translateX(-50%);*/ }
+h1 img 			{ width:100%; }
+
+.searchWrap form>button 	{ position:absolute; left:4.6%; top:27px; width:20px; height:20px; background:url(../img/cjw-icon-search1.png) 0 0 no-repeat; background-size:20px; }
+
+.searchOn 		{ display:none; position:absolute; top:0; left:0; width:100%; height:100%; background:#fff; z-index:1; text-align:center; }
+.searchOn .close 	{ font-size:1.7rem; color:#959595; }
+.searchOn input 	{ width:66.667%; height:32px; background:#eee; margin:22px 2.133% 0; border:0; border-radius:4px; padding:8px; font-size:1.6rem; color:#000; }
+.searchOn button 	{ width:45px; height:32px; border-radius:4px; background:url(../img/cjw-icon-search2.png) 50% 50% no-repeat #777; background-size:15px; vertical-align:bottom; }
+
+.navBtn 		{ position:absolute; top:29px; right:4.6%; width:24px; height:18px; }
+.navBtn span 	{ display:block; height:4px; border-radius:3px; background:#000;  }
+.navBtn span:nth-child(2) 	{ margin:3px 0; }
+
+hader nav {
+	display: none;
+	position: fixed; top: 0; left: 0;
+	width: 100%; height: 100%;
+	background: rgba(0,0,0,.7);
+}
+.navInner {
+	overflow:auto;
+	position: absolute; top: 0; right: 0;
+	width: 67.733%; height: 100%; padding-top: 31px;
+	background: #fff;
+}
+.navInner strong {
+	display: block;
+	width: 83.071%; margin: 0 0 24px 7.087%;
+}
+.navInner strong span {
+	float: left;
+	width: 61px; height: 22px;
+}
+.navInner strong span a {
+	display: block;
+	height: 100%;
+	background: url(../img/cjw-logo-header.png) no-repeat; background-size: contain;
+	text-indent: -9999px;
+}
+.navInner strong > a {
+	float: right;
+	color: #02b5d6; font-size: 1.3rem; line-height: 22px; font-weight: normal;
+}
+.navInner .right {
+	display: none;
+}
+.navInner ul {
+	width: 83.071%; margin-left: 7.087%; border-top: 2px solid #595959;
+}
+.navInner ul > li > a {
+	display: block; position: relative;
+	height: 60px; padding-left: 4.502%; border-bottom: 1px solid #959595;
+	color: #595959; font-size: 1.7rem; line-height: 60px;
+}
+.navInner ul > li:last-child > a {
+	border-bottom: none;
+}
+.navInner ul > li:last-child.open > a {
+	border-bottom: 1px solid #959595;
+}
+.navInner ul > li.open + li > a {
+	border-top: 1px solid #959595;
+}
+.navInner ul > li > a span {
+	position: absolute; right: 2.844%; top: 50%;
+	width: 15px; height: 8px; margin-top: -4px;
+	background: url(../img/cjw-arrow-nav-bottom.png) no-repeat; background-size: contain;
+}
+.navInner ul > li.open > a span {
+	background-image: url(../img/cjw-arrow-nav-top.png);
+}
+.navInner .wrap {
+	display: none;
+}
+.navInner .open .wrap {
+	display: block;
+} 
+.navInner ol {
+	background: #f8f8f8;
+}
+.navInner ol li {
+	width: 89.573%; margin-left: 4.502%; border-bottom: 1px solid #cfcfcf;
+}
+.navInner ol:last-child li:last-child {
+	border-bottom: none;
+}
+.navInner ol a {
+	display: block;
+	height: 45px; padding-left: 5.82%;
+	color: #747474; font-size: 1.4rem; line-height: 45px;
+}
+.navInner > a {
+	display: block; position: relative;
+	height: 58px; padding-left: 11.22%; border-bottom: 2px solid rgba(255,255,255,.5);
+	background: #02b5d6;
+	color: #fff; font-size: 1.7rem; line-height: 58px;
+}
+.navInner > a span {
+	position: absolute; right: 10.433%; top: 50%;
+	width: 27px; height: 26px; margin-top: -13px;
+	background: url(../img/cjw-icon-login.png) no-repeat; background-size: contain;
+}
+.navInner > a:last-child span {
+	background-image: url(../img/cjw-icon-phone.png);
+}
+
+
+/* visual */
+.visual 	{ height:550px; padding:172px 0 0; margin-top:75px; background:url(../img/cjw-bg-main.jpg) 50% 50% no-repeat; background-size:cover; text-align:center; }
+.visual div:first-child ~ div { display:none; }
+
+.visual i 	{ font-size:1.8rem; color:#fff; display:block; font-style:normal; margin-bottom:14px; }
+.visual i span:first-child 	{ color:#81ebff; }
+.visual i span:last-child 	{ color:#fff857; }
+.visual b 	{ font-size:4.3rem; color:#fff; font-weight:normal; }
+.visual p 	{ font-size:1.4rem; color:#fff; margin:21px auto 32px; line-height:1.286; width:83%; font-family: 'Spoqa Han Sans'; font-weight: 400; }
+.visual a 	{ width:311px; height:50px; border:2px solid rgba(255,255,255,.6); border-radius:4px; font-size:1.5rem; color:#fff; font-family: 'Spoqa Han Sans'; font-weight: 400; display:inline-block; line-height:46px; background-color:rgba(0,0,0,.4); }
+
+
+.section	{ height:50px; border-bottom:1px solid #959595; background:#fff; text-align:center; }
+.section.on	{ position:fixed; left:0; top:75px; width:100%; }
+/*.section ul 	{ width:100%; overflow:hidden; }
+.section ul li 	{ float:left; width:25%; }
+.section ul li a 		{ display:block; text-align:center; height:50px; line-height:50px; }*/
+.section li { display:inline-block; width:24%; }
+.section a 	{ display:block; font-size:1.3rem; line-height:50px; color:#959595; }
+.section .on a 	{ color:#000; }
+
+
+/* .main */
+
+	/* #story */
+#story {
+	padding: 27px 0 64px;
+	background: #f8f8f8;
+}
+.storyInner div {
+	width: 82.933%; height: 328px; padding: 23px 14px; margin: 0 auto; border: 3px solid #f47933; border-radius: 2px;
+	background: #fff url(../img/cjw-bg-smart.jpg) no-repeat right bottom; background-size: auto 315px;
+}
+/* slider */
+.storyInner div:first-child ~ div {
+	display: none;
+}
+.storyInner div:nth-child(2) {
+	border-color: #01b5d6;
+	background-image: url(../img/cjw-bg-fresh.jpg); background-size: auto 412px;
+}
+.storyInner div:nth-child(3) {
+	border-color: #ef4665;
+	background-image: url(../img/cjw-bg-classic.jpg); background-size: auto 375px;
+}
+.storyInner div b {
+	display: block;
+	width: 72px; height: 31px; margin-bottom: 6px;
+	background: url(../img/cjw-logo-smart.png) no-repeat; background-size: contain;
+	text-indent: -9999px;
+}
+.storyInner div:nth-of-type(2) b {
+	background-image: url(../img/cjw-logo-fresh.png);
+}
+.storyInner div:nth-of-type(3) b {
+	background-image: url(../img/cjw-logo-classic.png);
+}
+.storyInner div i {
+	font-size: 2rem; line-height: 1.25; font-style: normal;
+}
+.storyInner div i span {
+	display: block;
+}
+.storyInner div p {
+	margin: 13px 0 15px;
+	font-size: 1.3rem; line-height: 1.154;
+}
+.storyInner div a {
+	display: block;
+	width: 150px; height: 35px; border: 2px solid #cfcfcf;
+	background: #fff;
+	color: #343434; font-size: 1.1rem; line-height: 33px; text-align: center;
+}
+.storyInner div a span {
+	display: inline-block;
+	width: 8px; height: 8px; margin-left: 15px;
+	background: url(../img/cjw-plus-story-orange.png) no-repeat; background-size: contain;
+}
+.storyInner div:nth-of-type(2) a span {
+	background-image: url(../img/cjw-plus-story-blue.png);
+}
+.storyInner div:nth-of-type(3) a span {
+	background-image: url(../img/cjw-plus-story-red.png);
+}
+
+/* #cast */
+#cast {
+	padding-bottom: 31px;
+	background: #f8f8f8;
+}
+.castInner .title {
+	height: 147px; padding-top: 39px; margin-bottom: 19px;
+	background: url(../img/cjw-bg-foodCast.jpg) no-repeat center; background-size: cover;
+	text-align: center;
+}
+.castInner h3 {
+	margin-bottom: 12px;
+	color: #fff; font-size: 3.3rem; font-weight: normal;
+}
+.castInner .title a {
+	display: inline-block;
+	width: 230px; height: 40px; border: 2px solid rgba(255,255,255,.6);
+	background: rgba(0,0,0,.4);
+	color: #fff; font-size: 1.3rem; line-height: 38px;
+}
+.castInner .title a span {
+	display: inline-block;
+	width: 10px; height: 10px; margin-left: 11px;
+	background: url(../img/cjw-plus-section-blue.png) no-repeat; background-size: contain;
+}
+.castInner .slider {
+	width: 82.933%; padding: 2px; margin: 0 auto 61px; border: 1px solid rgba(149,149,149,.6); border-radius: 3px;
+	background: #fff;
+}
+/* slider */
+.castInner .slider div:first-child ~ div {
+	display: none;
+}
+.castInner .slider div > span {
+	display: block;
+	height: 199px;
+	background: url(../img/cjw-img-foodCast.jpg) no-repeat center; background-size: cover;
+}
+.castInner .slider div a {
+	display: block;
+	padding: 15px 0 17px;
+	text-align: center;
+}
+.castInner .slider div a b, .castInner .slider div a p, .castInner .slider div a > span {
+	display: none;
+}
+.castInner .slider div h4 {
+	color: #626262; font-size: 1.3rem; line-height: 1.154; font-weight: normal;
+}
+.castInner .banner {
+	display: block; position: relative;
+	width: 82.933%; padding: 25px 51px 24px 99px; margin: 0 auto 11px; border-radius: 3px;
+	background: #02b5d6 url(../img/cjw-icon-foodLab.png) no-repeat 14px 50%; background-size: 58px;
+	color: #000;
+}
+.castInner .banner:last-child {
+	margin-bottom: 0;
+	background-color: #76d9c5; background-image: url(../img/cjw-icon-bottleRecipe.png);
+}
+.castInner .banner h4 {
+	margin-bottom: 10px;
+	font-size: 2rem; font-weight: normal;
+}
+.castInner .banner p {
+	font-size: 1.1rem; line-height: 1.182;
+}
+.castInner .banner > span {
+	position: absolute; top: 50%; right: 12px;
+	width: 16px; height: 28px; margin-top: -14px;
+	background: url(../img/cjw-arrow-section-right.png) no-repeat center; background-size: contain;
+	text-indent: -9999px;
+}
+
+	/* #knowhow */
+#knowhow {
+	padding-bottom: 31px;
+	background: #f8f8f8;
+}
+.knowhowInner .title {
+	height: 147px; padding-top: 39px; margin-bottom: 19px;
+	background: url(../img/cjw-bg-foodKnowhow-mobile.jpg) no-repeat center; background-size: cover;
+	text-align: center;
+}
+.knowhowInner h3 {
+	margin-bottom: 12px;
+	color: #fff; font-size: 3.3rem; font-weight: normal;
+}
+.knowhowInner .title a {
+	display: inline-block;
+	width: 230px; height: 40px; border: 2px solid rgba(255,255,255,.6); 
+	background: rgba(0,0,0,.4);
+	color: #fff; font-size: 1.3rem; line-height: 38px;
+}
+.knowhowInner .title a span {
+	display: inline-block;
+	width: 10px; height: 10px; margin-left: 11px;
+	background: url(../img/cjw-plus-section-yellow.png) no-repeat; background-size: contain;
+}
+.knowhowInner .slider {
+	width: 82.933%; padding: 2px; margin: 0 auto 61px; border: 1px solid rgba(149,149,149,.6); border-radius: 3px;
+	background: #fff;
+}
+/* slider */
+.knowhowInner .slider div:first-child ~ div {display: none;}
+.knowhowInner .slider div > span {
+	display: block;
+	height: 199px;
+	background: url(../img/cjw-img-specialRecipe.jpg) no-repeat center; background-size: cover;
+}
+.knowhowInner .slider div a {
+	display: block;
+	padding: 15px 0 17px;
+}
+.knowhowInner .slider div a b, .knowhowInner .slider div a h4, .knowhowInner .slider div a > span {
+	display: none;
+}
+.knowhowInner .slider div p {
+	color: #626262; font-size: 1.3rem; line-height: 1.154; text-align: center;
+}
+.knowhowInner .banner {
+	display: block; position: relative;
+	width: 82.933%; padding: 25px 51px 24px 99px; margin: 0 auto 11px; border-radius:3px;
+	background: #76d9c5 url(../img/cjw-icon-cjwRecipe.png) no-repeat 14px 50%; background-size: 58px;
+	color: #000;
+}
+.knowhowInner .bannerWrap .banner {
+	margin-bottom: 0;
+	background-color: #f4cb4d; background-image: url(../img/cjw-icon-eShop.png);
+}
+.knowhowInner .bannerWrap a:nth-child(1), .knowhowInner .bannerWrap a:nth-child(2), .knowhowInner .bannerWrap a:nth-child(4){
+	display: none;
+}
+.knowhowInner .banner h4 {
+	margin-bottom: 10px;
+	font-size: 2rem; font-weight: normal;
+}
+.knowhowInner .banner p {
+	font-size: 1.1rem; line-height: 1.182;
+}
+.knowhowInner .banner > span {
+	position: absolute; top: 50%; right: 12px;
+	width: 16px; height: 28px; margin-top: -14px;
+	background: url(../img/cjw-arrow-section-right.png) no-repeat center; background-size: contain;
+	text-indent: -9999px;
+}
+
+	/* #friends */
+#friends {
+	padding-bottom: 31px;
+	background: #f8f8f8;
+}
+.friendsInner .title {
+	height: 147px; padding-top: 39px; margin-bottom: 19px;
+	background: url(../img/cjw-bg-friends.jpg) no-repeat center; background-size: cover;
+	text-align: center;
+}
+.friendsInner h3 {
+	margin-bottom: 12px;
+	color: #fff; font-size: 3.3rem; font-weight: normal;
+}
+.friendsInner .title a {
+	display: inline-block;
+	width: 230px; height: 40px; border: 2px solid rgba(255,255,255,.6); 
+	background: rgba(0,0,0,.4);
+	color: #fff; font-size: 1.3rem; line-height: 38px;
+}
+.friendsInner .title a span {
+	display: inline-block;
+	width: 10px; height: 10px; margin-left: 11px;
+	background: url(../img/cjw-plus-section-green.png) no-repeat center; background-size: contain;
+}
+.friendsInner .banner {
+	display: block; position: relative;
+	width: 82.933%; margin: 0 auto 10px;
+}
+.friendsInner .banner:nth-of-type(1) {
+	overflow: hidden;
+	padding: 25px 11px;
+	background: #f4cb4d;
+	color: #000;
+}
+.friendsInner .banner:nth-of-type(1) .bg {
+	position: absolute; bottom: 0; right: -32px;
+	width: 139px; height: 139px;
+	background: url(../img/cjw-icon-foodBox.png) no-repeat; background-size: contain;
+}
+.friendsInner .banner:nth-of-type(1) b {
+	font-size: 1.8rem; line-height: 1.111; font-weight: normal;
+}
+.friendsInner .banner:nth-of-type(1) .line {
+	display: block;
+	width: 67.524%; height: 2px; margin: 15px 0;
+	background: rgba(255,255,255,.5);
+}
+.friendsInner .banner:nth-of-type(1) p {
+	margin-bottom: 22px;
+	font-size: 1.1rem; line-height: 1.182;
+}
+.friendsInner .banner:nth-of-type(1) span:last-child {
+	display: block;
+	width: 145px; height: 35px; border: 2px solid #fff;
+	background: rgba(255,255,255,.5);
+	font-size: 1.3rem; line-height: 33px; text-align: center;
+}
+.friendsInner .banner:nth-of-type(2) {
+	padding: 25px 51px 24px 99px;
+	background: #02b5d6 url(../img/cjw-icon-friendsPanel.png) no-repeat 14px 50%; background-size: 59px;
+	color: #fff;
+}
+.friendsInner .banner:nth-of-type(2) h4 {
+	margin-bottom: 10px;
+	font-size: 1rem; font-weight: normal;
+}
+.friendsInner .banner:nth-of-type(2) p {
+	font-size: 1.2rem; line-height: 1.083;
+}
+.friendsInner .banner:nth-of-type(2) span {
+	position: absolute; top: 50%; right: 12px;
+	width: 16px; height: 28px; margin-top: -14px;
+	background: url(../img/cjw-arrow-section-right.png) no-repeat center; background-size: contain;
+	text-indent: -9999px;
+}
+.friendsInner .box {
+	width: 82.933%; margin: 0 auto;
+}
+.friendsInner .bannerBox {
+	float: left;
+	width: 50%; height: 113px; padding-top: 13px; border: 2px solid #cfcfcf;
+	background: #fff;
+	text-align: center;
+}
+.friendsInner .bannerBox:last-child {
+	border-left: none;
+}
+.friendsInner .bannerBox h4 {
+	padding-top: 70px;
+	background: url(../img/cjw-icon-foodEditor.png) no-repeat top center; background-size: 62px;
+	color: #000; font-size: 1.2rem; font-weight: normal;
+}
+.friendsInner .bannerBox:last-child h4 {
+	background-image: url(../img/cjw-icon-meetingTalk.png); background-position: 50% 5px; background-size: 53px;
+}
+
+	/* #sns */
+#sns {
+	padding: 36px 0 33px;
+}
+.snsInner .title {
+	text-align: center;
+}
+.snsInner h3 {
+	margin-bottom: 14px;
+	font-size: 3.3rem; font-weight: normal;
+}
+.snsInner .title p {
+	color: #4b4b4b; font-size: 1.4rem;
+}
+.snsInner .sns {
+	margin: 20px 0 32px;
+	text-align: center;
+}
+.snsInner .sns a {
+	display: inline-block;
+	width: 35px; height: 35px; margin-right: 20px;
+	background: url(../img/cjw-sns-facebook.png) no-repeat; background-size: contain;
+	text-indent: -9999px;
+}
+.snsInner .sns a:nth-child(2) {
+	background-image: url(../img/cjw-sns-kakao.png);
+}
+.snsInner .sns a:nth-child(3) {
+	background-image: url(../img/cjw-sns-blog.png);
+}
+.snsInner .sns a:nth-child(4) {
+	background-image: url(../img/cjw-sns-twitter.png);
+}
+.snsInner .sns a:nth-child(5) {
+	background-image: url(../img/cjw-sns-instagram.png);
+}
+.snsInner .sns a:nth-child(6) {
+	margin-right: 0;
+	background-image: url(../img/cjw-sns-youtube.png);
+}
+.snsInner .box {
+	width: 82.933%; margin: 0 auto;
+}
+.snsInner .box a {
+	display: block;
+	height: 160px; border: 2px solid #f8f7f7;
+}
+.snsInner .box a:last-child {
+	border-top: none;
+}
+.snsInner .box a span {
+	float: left;
+	width: 50%; height: 100%; border-right: 2px solid #f8f7f7;
+	background: url(../img/cjw-img-snsNaver.jpg) no-repeat center; background-size: cover;
+}
+.snsInner .box a:last-child span {
+	float: right; 
+	border-right: none; border-left: 2px solid #f8f7f7;
+	background-image: url(../img/cjw-img-snsFacebook.jpg);
+}
+.snsInner .box .text {
+	float: left; position: relative;
+	width: 50%; height: 100%; padding: 18px 5px 0;
+}
+.snsInner .box h4 {
+	height: 18px;
+	background: url(../img/cjw-sns-blog.png) no-repeat right center; background-size: contain;
+	color: #000; font-size: 1.3rem; line-height: 18px; font-weight: normal;
+}
+.snsInner .box a:last-child h4 {
+	background-image: url(../img/cjw-sns-facebook.png);
+}
+.snsInner .box p {
+	position: absolute; left: 0; bottom: 15px;
+	padding: 0 5px;
+	color: #494949; font-size: 1.3rem; line-height: 1.077;
+}
+
+/* footer */
+footer {
+	border-top: 1px solid #cfcfcf;
+	background: #fbfbfb;
+}
+footer a {
+	color: #767676;
+}
+.snsWrap > a {
+	display: block;
+	height: 50px; padding-left: 8.533%; border-bottom: 1px solid #cfcfcf;
+	color: #02b5d6; font-size: 1.2rem; line-height: 50px;
+}
+.snsWrap li {
+	float: left;
+	width: 50%; border-bottom: 1px solid #cfcfcf;
+}
+.snsWrap li:nth-child(even) {
+	border-left: 1px solid #cfcfcf;
+}
+.snsWrap li a {
+	display: block;
+	height: 50px; padding-left: 17.067%;
+	font-size: 1.2rem; line-height: 50px;
+}
+.snsWrap li a:hover, .snsWrap li a:focus {
+	color: #000;
+}
+.copyWrap > span a {
+	float: left;
+	width: 50%; height: 50px; padding-left: 17.2%; border-bottom: 1px solid #cfcfcf;
+	background: url(../img/cjw-logo-ccm.png) no-repeat 17.067% 50%; background-size: auto 26px;
+	font-size: 1rem; line-height: 50px;
+}
+.copyWrap > span a:last-child {
+	border-left: 1px solid #cfcfcf;
+	background-image: url(../img/cjw-logo-wa.png); background-size: auto 24px;
+}
+.copy {
+	margin-top: 29px;
+	text-align: center;
+}
+.copy img {
+	width: 40px; margin-bottom: 25px;
+}
+.copy p > span {
+	display: none;
+}
+.copy .phone {
+	color: #666; font-size: 1.1rem; line-height: 1.455; font-style: normal;
+}
+.copy .phone span:first-child:after {
+	content: "|";
+	margin: 0 11px;
+}
+.copy .phone span:last-child {
+	display: block;
+}
+footer small {
+	display: block;
+	height: 45px; margin-top: 27px;
+	background: #666;
+	color: #fbfbfb; font-size: 1rem; line-height: 45px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*768*/
+@media all and (min-width:768px){
+    body {font-family:'Spoqa Han Sans',sans-serif;}
+    /* header:s */
+.navWrap		{  height:80px; }
+h1 				{ top:26px; width:106px; margin-left:-53px; /*transform:translateX(-50%);*/ }
+
+
+.searchWrap form>button 	{  left:5.208%; top:30px; width:30px; height:30px;  background-size:30px; }
+
+.searchOn 		{ /*display:block;*/}/*블럭 속성을 주면 숨긴게 보인다*/
+.searchOn .close 	{ font-size:2.1rem; }
+.searchOn input 	{ width:71.614%; height:40px; margin:23px 1.953% 0; padding:9.5px; font-size:2.1rem; }
+.searchOn button 	{ width:70px; height:40px;  background-size:20px;  }
+
+.navBtn 		{ top:32px; right:5.208%; width:42px; height:6px; }
+.navBtn span 	{ height:4px;  }
+.navBtn span:nth-child(2) 	{ margin:4px 0; }
+
+header nav {
+	display: none;
+	position: fixed; top: 0; left: 0;
+	width: 100%; height: 100%;
+	background: rgba(0,0,0,.7);
+}
+.navInner {
+	overflow:auto;
+	position: absolute; top: 0; right: 0;
+	width: 67.733%; height: 100%; padding-top: 31px;
+	background: #fff;
+}
+.navInner strong {
+	display: block;
+	width: 83.071%; margin: 0 0 24px 7.087%;
+}
+.navInner strong span {
+	float: left;
+	width: 61px; height: 22px;
+}
+.navInner strong span a {
+	display: block;
+	height: 100%;
+	background: url(../img/cjw-logo-header.png) no-repeat; background-size: contain;
+	text-indent: -9999px;
+}
+.navInner strong > a {
+	float: right;
+	color: #02b5d6; font-size: 1.3rem; line-height: 22px; font-weight: normal;
+}
+.navInner .right {
+	display: none;
+}
+.navInner ul {
+	width: 83.071%; margin-left: 7.087%; border-top: 2px solid #595959;
+}
+.navInner ul > li > a {
+	display: block; position: relative;
+	height: 60px; padding-left: 4.502%; border-bottom: 1px solid #959595;
+	color: #595959; font-size: 1.7rem; line-height: 60px;
+}
+.navInner ul > li:last-child > a {
+	border-bottom: none;
+}
+.navInner ul > li:last-child.open > a {
+	border-bottom: 1px solid #959595;
+}
+.navInner ul > li.open + li > a {
+	border-top: 1px solid #959595;
+}
+.navInner ul > li > a span {
+	position: absolute; right: 2.844%; top: 50%;
+	width: 15px; height: 8px; margin-top: -4px;
+	background: url(../img/cjw-arrow-nav-bottom.png) no-repeat; background-size: contain;
+}
+.navInner ul > li.open > a span {
+	background-image: url(../img/cjw-arrow-nav-top.png);
+}
+.navInner .wrap {
+	display: none;
+}
+.navInner .open .wrap {
+	display: block;
+} 
+.navInner ol {
+	background: #f8f8f8;
+}
+.navInner ol li {
+	width: 89.573%; margin-left: 4.502%; border-bottom: 1px solid #cfcfcf;
+}
+.navInner ol:last-child li:last-child {
+	border-bottom: none;
+}
+.navInner ol a {
+	display: block;
+	height: 45px; padding-left: 5.82%;
+	color: #747474; font-size: 1.4rem; line-height: 45px;
+}
+.navInner > a {
+	display: block; position: relative;
+	height: 58px; padding-left: 11.22%; border-bottom: 2px solid rgba(255,255,255,.5);
+	background: #02b5d6;
+	color: #fff; font-size: 1.7rem; line-height: 58px;
+}
+.navInner > a span {
+	position: absolute; right: 10.433%; top: 50%;
+	width: 27px; height: 26px; margin-top: -13px;
+	background: url(../img/cjw-icon-login.png) no-repeat; background-size: contain;
+}
+.navInner > a:last-child span {
+	background-image: url(../img/cjw-icon-phone.png);
+}
+
+
+/* visual */
+.visual 	{ height:750px; padding:180px 0 0; margin-top:80px;}
+.visual div:first-child ~ div {  }
+
+.visual i 	{ font-size:3.3rem;  margin-bottom:23px; }
+
+.visual b 	{ font-size:7.5rem;  }
+.visual p 	{ font-size:2.4rem;  margin:29.5px auto 32px; line-height:2.9rem; width:83%; }
+    /*
+    1=2.4 ,0.5=1.2, 0.25=0.6, 0.125=0.3, 0.0625=0.15 ,0.04166667=0.1  line-height에는 %나 rem으로 준다*/
+.visual a 	{ width:300px; height:70px;  border-radius:3px; font-size:2.1rem;  line-height:65px; }
+
+
+.section	{ height:70px;  text-align:center; }
+.section.on	{ position:fixed; left:0; top:75px; width:100%; }
+/*.section ul 	{ width:100%; overflow:hidden; }
+.section ul li 	{ float:left; width:25%; }
+.section ul li a 		{ display:block; text-align:center; height:50px; line-height:50px; }*/
+.section li { display:inline-block; width:24%; }
+.section a 	{ display:block; font-size:1.7rem; line-height:70px;  }
+.section .on a 	{ color:#000; }
+
+
+/* .main */
+
+	/* #story */
+#story {
+	padding: 27px 0 64px;
+	background: #f8f8f8;
+   
+}
+.storyInner div {
+	width: 308px; height: 375px; padding: 23px 14px; margin: 0 auto; margin-left:72px; border: 3px solid #f47933; border-radius: 3px;
+    background: #fff url(../img/cjw-bg-smart.jpg) no-repeat right bottom; background-size: auto 250px;  }
+
+/* slider */
+.storyInner div:first-child ~ div:nth-child(2){
+   
+	display: block; top:928px;
+}
+.storyInner div:nth-child(2) {
+     margin: 0 auto; margin-left:386px;
+	 background-size: auto 412px; 
+   position:absolute;
+}
+.storyInner div:nth-child(3) {
+	border-color: #ef4665;
+	background-image: url(../img/cjw-bg-classic.jpg); background-size: auto 375px;
+}
+.storyInner div b {
+	display: block;
+	width: 72px; height: 25px; margin-bottom: 6px;
+	background: url(../img/cjw-logo-smart.png) no-repeat; background-size: contain;
+	text-indent: -9999px;
+}
+.storyInner div:nth-of-type(2) b {
+    display: block;
+    width:72px; height:25px; background-size: contain;
+	background-image: url(../img/cjw-logo-fresh.png);
+}
+.storyInner div:nth-of-type(3) b {
+	background-image: url(../img/cjw-logo-classic.png);
+}
+.storyInner div i {
+ 	font-size: 2rem; line-height: 1.25; font-style: normal; 
+}
+.storyInner div i span {
+   
+	display: block;
+}
+.storyInner div p {
+    width:290px; 
+	margin: 13px 0 15px;
+	font-size: 1.6rem; line-height: 1.154;
+    
+}
+
+.storyInner div a {
+	display: block;
+	width: 188px; height: 45px; 
+	 font-size: 1.5rem; 
+    margin-top:12px;
+}
+.storyInner div a span {
+	display: inline-block;
+	width: 16px; height: 16px; margin-left: 15px; margin-top:12px;
+	background: url(../img/cjw-plus-story-orange.png) no-repeat; background-size: contain;
+}
+.storyInner div:nth-of-type(2) a span {
+	background-image: url(../img/cjw-plus-story-blue.png);
+}
+.storyInner div:nth-of-type(3) a span {
+	background-image: url(../img/cjw-plus-story-red.png);
+}
+
+/* #cast */
+#cast {
+	padding-bottom: 31px;
+	background: #f8f8f8;
+}
+.castInner .title {
+	height: 147px; padding-top: 39px; margin-bottom: 19px;
+	background: url(../img/cjw-bg-foodCast.jpg) no-repeat center; background-size: cover;
+	text-align: center;
+}
+.castInner h3 {
+	margin-bottom: 12px;
+	color: #fff; font-size: 3.3rem; font-weight: normal;
+}
+.castInner .title a {
+	display: inline-block;
+	width: 230px; height: 40px; border: 2px solid rgba(255,255,255,.6);
+	background: rgba(0,0,0,.4);
+	color: #fff; font-size: 1.3rem; line-height: 38px;
+}
+.castInner .title a span {
+	display: inline-block;
+	width: 10px; height: 10px; margin-left: 11px;
+	background: url(../img/cjw-plus-section-blue.png) no-repeat; background-size: contain;
+}
+.castInner .slider {
+	width: 82.933%; padding: 2px; margin: 0 auto 61px; border: 1px solid rgba(149,149,149,.6); border-radius: 3px;
+	background: #fff;
+}
+/* slider */
+.castInner .slider div:first-child ~ div {
+	display: none;
+}
+.castInner .slider div > span {
+	display: block;
+	height: 199px;
+	background: url(../img/cjw-img-foodCast.jpg) no-repeat center; background-size: cover;
+}
+.castInner .slider div a {
+	display: block;
+	padding: 15px 0 17px;
+	text-align: center;
+}
+.castInner .slider div a b, .castInner .slider div a p, .castInner .slider div a > span {
+	display: none;
+}
+.castInner .slider div h4 {
+	color: #626262; font-size: 1.3rem; line-height: 1.154; font-weight: normal;
+}
+.castInner .banner {
+	display: block; position: relative;
+	width: 82.933%; padding: 25px 51px 24px 99px; margin: 0 auto 11px; border-radius: 3px;
+	background: #02b5d6 url(../img/cjw-icon-foodLab.png) no-repeat 14px 50%; background-size: 58px;
+	color: #000;
+}
+.castInner .banner:last-child {
+	margin-bottom: 0;
+	background-color: #76d9c5; background-image: url(../img/cjw-icon-bottleRecipe.png);
+}
+.castInner .banner h4 {
+	margin-bottom: 10px;
+	font-size: 2rem; font-weight: normal;
+}
+.castInner .banner p {
+	font-size: 1.1rem; line-height: 1.182;
+}
+.castInner .banner > span {
+	position: absolute; top: 50%; right: 12px;
+	width: 16px; height: 28px; margin-top: -14px;
+	background: url(../img/cjw-arrow-section-right.png) no-repeat center; background-size: contain;
+	text-indent: -9999px;
+}
+
+	/* #knowhow */
+#knowhow {
+	padding-bottom: 31px;
+	background: #f8f8f8;
+}
+.knowhowInner .title {
+	height: 147px; padding-top: 39px; margin-bottom: 19px;
+	background: url(../img/cjw-bg-foodKnowhow-mobile.jpg) no-repeat center; background-size: cover;
+	text-align: center;
+}
+.knowhowInner h3 {
+	margin-bottom: 12px;
+	color: #fff; font-size: 3.3rem; font-weight: normal;
+}
+.knowhowInner .title a {
+	display: inline-block;
+	width: 230px; height: 40px; border: 2px solid rgba(255,255,255,.6); 
+	background: rgba(0,0,0,.4);
+	color: #fff; font-size: 1.3rem; line-height: 38px;
+}
+.knowhowInner .title a span {
+	display: inline-block;
+	width: 10px; height: 10px; margin-left: 11px;
+	background: url(../img/cjw-plus-section-yellow.png) no-repeat; background-size: contain;
+}
+.knowhowInner .slider {
+	width: 82.933%; padding: 2px; margin: 0 auto 61px; border: 1px solid rgba(149,149,149,.6); border-radius: 3px;
+	background: #fff;
+}
+/* slider */
+.knowhowInner .slider div:first-child ~ div {display: none;}
+.knowhowInner .slider div > span {
+	display: block;
+	height: 199px;
+	background: url(../img/cjw-img-specialRecipe.jpg) no-repeat center; background-size: cover;
+}
+.knowhowInner .slider div a {
+	display: block;
+	padding: 15px 0 17px;
+}
+.knowhowInner .slider div a b, .knowhowInner .slider div a h4, .knowhowInner .slider div a > span {
+	display: none;
+}
+.knowhowInner .slider div p {
+	color: #626262; font-size: 1.3rem; line-height: 1.154; text-align: center;
+}
+.knowhowInner .banner {
+	display: block; position: relative;
+	width: 82.933%; padding: 25px 51px 24px 99px; margin: 0 auto 11px; border-radius:3px;
+	background: #76d9c5 url(../img/cjw-icon-cjwRecipe.png) no-repeat 14px 50%; background-size: 58px;
+	color: #000;
+}
+.knowhowInner .bannerWrap .banner {
+	margin-bottom: 0;
+	background-color: #f4cb4d; background-image: url(../img/cjw-icon-eShop.png);
+}
+.knowhowInner .bannerWrap a:nth-child(1), .knowhowInner .bannerWrap a:nth-child(2), .knowhowInner .bannerWrap a:nth-child(4){
+	display: none;
+}
+.knowhowInner .banner h4 {
+	margin-bottom: 10px;
+	font-size: 2rem; font-weight: normal;
+}
+.knowhowInner .banner p {
+	font-size: 1.1rem; line-height: 1.182;
+}
+.knowhowInner .banner > span {
+	position: absolute; top: 50%; right: 12px;
+	width: 16px; height: 28px; margin-top: -14px;
+	background: url(../img/cjw-arrow-section-right.png) no-repeat center; background-size: contain;
+	text-indent: -9999px;
+}
+
+	/* #friends */
+#friends {
+	padding-bottom: 31px;
+	background: #f8f8f8;
+}
+.friendsInner .title {
+	height: 147px; padding-top: 39px; margin-bottom: 19px;
+	background: url(../img/cjw-bg-friends.jpg) no-repeat center; background-size: cover;
+	text-align: center;
+}
+.friendsInner h3 {
+	margin-bottom: 12px;
+	color: #fff; font-size: 3.3rem; font-weight: normal;
+}
+.friendsInner .title a {
+	display: inline-block;
+	width: 230px; height: 40px; border: 2px solid rgba(255,255,255,.6); 
+	background: rgba(0,0,0,.4);
+	color: #fff; font-size: 1.3rem; line-height: 38px;
+}
+.friendsInner .title a span {
+	display: inline-block;
+	width: 10px; height: 10px; margin-left: 11px;
+	background: url(../img/cjw-plus-section-green.png) no-repeat center; background-size: contain;
+}
+.friendsInner .banner {
+	display: block; position: relative;
+	width: 82.933%; margin: 0 auto 10px;
+}
+.friendsInner .banner:nth-of-type(1) {
+	overflow: hidden;
+	padding: 25px 11px;
+	background: #f4cb4d;
+	color: #000;
+}
+.friendsInner .banner:nth-of-type(1) .bg {
+	position: absolute; bottom: 0; right: -32px;
+	width: 139px; height: 139px;
+	background: url(../img/cjw-icon-foodBox.png) no-repeat; background-size: contain;
+}
+.friendsInner .banner:nth-of-type(1) b {
+	font-size: 1.8rem; line-height: 1.111; font-weight: normal;
+}
+.friendsInner .banner:nth-of-type(1) .line {
+	display: block;
+	width: 67.524%; height: 2px; margin: 15px 0;
+	background: rgba(255,255,255,.5);
+}
+.friendsInner .banner:nth-of-type(1) p {
+	margin-bottom: 22px;
+	font-size: 1.1rem; line-height: 1.182;
+}
+.friendsInner .banner:nth-of-type(1) span:last-child {
+	display: block;
+	width: 145px; height: 35px; border: 2px solid #fff;
+	background: rgba(255,255,255,.5);
+	font-size: 1.3rem; line-height: 33px; text-align: center;
+}
+.friendsInner .banner:nth-of-type(2) {
+	padding: 25px 51px 24px 99px;
+	background: #02b5d6 url(../img/cjw-icon-friendsPanel.png) no-repeat 14px 50%; background-size: 59px;
+	color: #fff;
+}
+.friendsInner .banner:nth-of-type(2) h4 {
+	margin-bottom: 10px;
+	font-size: 1rem; font-weight: normal;
+}
+.friendsInner .banner:nth-of-type(2) p {
+	font-size: 1.2rem; line-height: 1.083;
+}
+.friendsInner .banner:nth-of-type(2) span {
+	position: absolute; top: 50%; right: 12px;
+	width: 16px; height: 28px; margin-top: -14px;
+	background: url(../img/cjw-arrow-section-right.png) no-repeat center; background-size: contain;
+	text-indent: -9999px;
+}
+.friendsInner .box {
+	width: 82.933%; margin: 0 auto;
+}
+.friendsInner .bannerBox {
+	float: left;
+	width: 50%; height: 113px; padding-top: 13px; border: 2px solid #cfcfcf;
+	background: #fff;
+	text-align: center;
+}
+.friendsInner .bannerBox:last-child {
+	border-left: none;
+}
+.friendsInner .bannerBox h4 {
+	padding-top: 70px;
+	background: url(../img/cjw-icon-foodEditor.png) no-repeat top center; background-size: 62px;
+	color: #000; font-size: 1.2rem; font-weight: normal;
+}
+.friendsInner .bannerBox:last-child h4 {
+	background-image: url(../img/cjw-icon-meetingTalk.png); background-position: 50% 5px; background-size: 53px;
+}
+
+	/* #sns */
+#sns {
+	padding: 36px 0 33px;
+}
+.snsInner .title {
+	text-align: center;
+}
+.snsInner h3 {
+	margin-bottom: 14px;
+	font-size: 3.3rem; font-weight: normal;
+}
+.snsInner .title p {
+	color: #4b4b4b; font-size: 1.4rem;
+}
+.snsInner .sns {
+	margin: 20px 0 32px;
+	text-align: center;
+}
+.snsInner .sns a {
+	display: inline-block;
+	width: 35px; height: 35px; margin-right: 20px;
+	background: url(../img/cjw-sns-facebook.png) no-repeat; background-size: contain;
+	text-indent: -9999px;
+}
+.snsInner .sns a:nth-child(2) {
+	background-image: url(../img/cjw-sns-kakao.png);
+}
+.snsInner .sns a:nth-child(3) {
+	background-image: url(../img/cjw-sns-blog.png);
+}
+.snsInner .sns a:nth-child(4) {
+	background-image: url(../img/cjw-sns-twitter.png);
+}
+.snsInner .sns a:nth-child(5) {
+	background-image: url(../img/cjw-sns-instagram.png);
+}
+.snsInner .sns a:nth-child(6) {
+	margin-right: 0;
+	background-image: url(../img/cjw-sns-youtube.png);
+}
+.snsInner .box {
+	width: 82.933%; margin: 0 auto;
+}
+.snsInner .box a {
+	display: block;
+	height: 160px; border: 2px solid #f8f7f7;
+}
+.snsInner .box a:last-child {
+	border-top: none;
+}
+.snsInner .box a span {
+	float: left;
+	width: 50%; height: 100%; border-right: 2px solid #f8f7f7;
+	background: url(../img/cjw-img-snsNaver.jpg) no-repeat center; background-size: cover;
+}
+.snsInner .box a:last-child span {
+	float: right; 
+	border-right: none; border-left: 2px solid #f8f7f7;
+	background-image: url(../img/cjw-img-snsFacebook.jpg);
+}
+.snsInner .box .text {
+	float: left; position: relative;
+	width: 50%; height: 100%; padding: 18px 5px 0;
+}
+.snsInner .box h4 {
+	height: 18px;
+	background: url(../img/cjw-sns-blog.png) no-repeat right center; background-size: contain;
+	color: #000; font-size: 1.3rem; line-height: 18px; font-weight: normal;
+}
+.snsInner .box a:last-child h4 {
+	background-image: url(../img/cjw-sns-facebook.png);
+}
+.snsInner .box p {
+	position: absolute; left: 0; bottom: 15px;
+	padding: 0 5px;
+	color: #494949; font-size: 1.3rem; line-height: 1.077;
+}
+
+/* footer */
+footer {
+	border-top: 1px solid #cfcfcf;
+	background: #fbfbfb;
+}
+footer a {
+	color: #767676;
+}
+.snsWrap > a {
+	display: block;
+	height: 50px; padding-left: 8.533%; border-bottom: 1px solid #cfcfcf;
+	color: #02b5d6; font-size: 1.2rem; line-height: 50px;
+}
+.snsWrap li {
+	float: left;
+	width: 50%; border-bottom: 1px solid #cfcfcf;
+}
+.snsWrap li:nth-child(even) {
+	border-left: 1px solid #cfcfcf;
+}
+.snsWrap li a {
+	display: block;
+	height: 50px; padding-left: 17.067%;
+	font-size: 1.2rem; line-height: 50px;
+}
+.snsWrap li a:hover, .snsWrap li a:focus {
+	color: #000;
+}
+.copyWrap > span a {
+	float: left;
+	width: 50%; height: 50px; padding-left: 17.2%; border-bottom: 1px solid #cfcfcf;
+	background: url(../img/cjw-logo-ccm.png) no-repeat 17.067% 50%; background-size: auto 26px;
+	font-size: 1rem; line-height: 50px;
+}
+.copyWrap > span a:last-child {
+	border-left: 1px solid #cfcfcf;
+	background-image: url(../img/cjw-logo-wa.png); background-size: auto 24px;
+}
+.copy {
+	margin-top: 29px;
+	text-align: center;
+}
+.copy img {
+	width: 40px; margin-bottom: 25px;
+}
+.copy p > span {
+	display: none;
+}
+.copy .phone {
+	color: #666; font-size: 1.1rem; line-height: 1.455; font-style: normal;
+}
+.copy .phone span:first-child:after {
+	content: "|";
+	margin: 0 11px;
+}
+.copy .phone span:last-child {
+	display: block;
+}
+footer small {
+	display: block;
+	height: 45px; margin-top: 27px;
+	background: #666;
+	color: #fbfbfb; font-size: 1rem; line-height: 45px;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

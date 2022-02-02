@@ -1,0 +1,832 @@
+@charset "utf-8";
+@import url(http://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+/*h2.blind {font-family:'Spoqa Han Sans'; }*/
+@font-face {
+    font-family:'nbgR';
+    src:url(fonts/NanumBarunGothic.eot?#iefix) format('embedded-opentype');
+    src:url(fonts/NanumBarunGothic.woff) format('woff');
+} /*css에서 폰트를 먹을수 있게 해주는것, 폰트의 포맷은 꼭 써줘야한다*/
+
+/* reset */
+*         { margin: 0; padding: 0; font-family:'nbgR', Arial, sans-serif; line-height: 1; box-sizing: border-box;} /*box-sizing: border-box; 전체에 주는건 안좋으니 필요한 부분에만 사용*/
+ul,ol     { list-style: none; }
+hr,caption,legend,.blind        { font-size: 0; overflow:hidden; width: 0; height: 0; line-height: 0; text-indent: -999999999px;} /*접근성을 위한것들*/
+a         { text-decoration: none;}
+img       { border: 0; }
+button    { border: 0; background: none; cursor: pointer; text-indent: -99999px; } /*+ 들여쓰기 - 내어쓰기*/
+html      { font-size: 0.625em; } /*font-size:10px; */  /*폰트 사이즈를 지정 안하면 16px; = 1em / 0.625em=10px; */
+.clear:after { content: ''; clear: both; display: block; }
+.pc       { display: none; } /*모바일부터 작업하기 위해서*/
+/*
+
+gnb - global navigation bar
+    - grand navigation bar*/
+
+/* header */
+
+.navWrap { position: fixed; top: 0; left: 0; width: 100%; height: 75px; background: #fff; z-index: 1; }
+h1 { position: absolute; top: 21px; left: 50%; margin: 0 0 0 -45px; width: 90px; } /*상단 부분을 만들때는 항상 로고가 우선 이여야 한다. 청정원 로고가 180이므로 90으로 넣기, transform: translatex(-50%) ?를 줘도됨*/
+h1 img         { width: 100%; }
+.searchWrap form>button    {  position: absolute; top: 27px; left: 4.66667%; width: 20px; height: 20px; 
+                                background: url(../img/cjw-icon-search1.png) 0 0 no-repeat; background-size: cover;} /* 750 에서 1퍼센트는 7.5 4는 30 그러므로 35는 4.66667% /*//*20 20 가로 세로 하나만 쓰면 가로 세로*//*화면인 커지면 커지게하려고 커버*/
+.searchOn      { position: absolute; top: 0; left: 0; z-index: 1; width: 100%; height: 100%; background: #fff; text-align: center; display: none;} /*나중에 스크립트로 보여지게 처리하기 때문에 일단 디스플레이 논*/
+.searchOn .close { color: #959595; font-size: 1.7rem;}
+.searchOn input { height: 32px; line-height: 32px; padding: 0 10px; margin:22px 2.13%; border: 0; border-radius: 4px; background: #eee; color: 000; font-size: 1.6rem;  width: 66.66667% } /*borer radius는 안줄인다 */
+.searchOn button {height: 32px; width: 45px; line-height: 32px; background: url(../img/cjw-icon-search2.png) 50% 50% no-repeat #777; border-radius: 4px; background-size: 15px; } /*center*/
+
+
+/*서취온 새로운 방식이 있는데 코드 올려줌 다운받아서 체크해보기, 박스 사이징이 있어서 칼크에서 패딩값을 나눈 125를 안빼줘도 됨 */
+
+
+.navBtn {position: absolute; top: 28.5px; right: 4.666667%; width: 24px; height: 18px;}
+.navBtn span {display: block; height: 4px; border-radius: 2px; background: #000; } /*높이가 4이므로 최대가 4이므로 2를줌*/
+.navBtn span:nth-child(2) {margin: 3px 0;}
+
+
+/* span 태그가 1개일 경우
+.navBtn { position: absolute; top: 28.5px; right: 4.666667%; width: 24px; height: 18px;}
+.navBtn span {  display: block; height: 4px; border-radius: 2px; background: #000; positoin:relative; margin:7px 0; }
+.navBtn span:before { position: absolute; top: -7px; left: 0; content: ''; height: 4px; border-radius: 2px; background: #000; width: 100%; }
+.navBtn span:after { position: absolute; top: 7px; left: 0; content: ''; height: 4px; border-radius: 2px; background: #000; width: 100%; }
+*/
+
+header nav {position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,.7); display: none;} /*소수점 앞이 0일때는 안써도됨*//*작업의 편리성을 위해 처음에는 디스플래이 논을 주고 그 후에 만들어준다*//*cjw html에서 on클래스 줘보가*/
+.navInner {background: #fff; position: absolute; top: 0; right: 0; height: 100%; width: 67.733%; overflow: auto; padding: 31px 0 0;} /*안에 텍스트들이 높이값을 넘어갈경우 스크롤이 되야해서 auto*/ /*psd를 보면 top에서 62px 떨어지므로 31px, 마진은 오류가 많아 패딩으로 주기*/
+.navInner>strong {display: block; width: 83.071%; margin: 0 0 24px 7.08%; } 
+.navInner>strong span     {float: left; width: 61px; height: 22px;}
+.navInner>strong span a   {display: block; height: 100%; background: url(../img/cjw-logo-header.png) 0 0 no-repeat; background-size: cover; text-indent: -999999px;}/*인라인 태그에도 백그라운드를 넣을수 있다, 꽉 차게 넣기 위해 100%주기,background-size: cover; 또는 contain */
+.navInner>strong>a        {float: right; font-size: 1.3rem; color: #02b5d6; font-weight: normal; line-height: 22px; } /*로고등 둘다 홀수일경우 유도리 있게 1씩 올림*//*26px 이므로 반값 13*//*스트롱을 받으므로 폰웨로 노말로 다시 초기화*//*로고와의 높이값을 라인헤이트와 동일하게 준다.*/
+.navInner .right {display: none;} /*pc버전에서만 필요한 것이기 때문에 숨기기*/
+.navInner ul     {display: block; width: 83.071%; margin: 0 0 0 7.08%; border-top: 2px solid #595959;  } /*storng와 넓이값이 값으므로 또같이 주고 바텀값은 아니므로 0*//*border값도 반으로 줄이지 않는다*/
+.navInner ul>li>a {display: block; height: 60px; line-height: 60px; font-size: 1.7rem; color: #595959; border-bottom: 1px solid #959595; padding-left: 4.502%; position: relative;}  /*border 값도 포함 119px*/
+.navInner ul>li>a span {position: absolute; top: 50%; right: 2.84%; width: 15px; height: 8px;
+margin-top: -4px; background: url(../img/cjw-arrow-nav-bottom.png) 0 0 no-repeat; background-size: contain;}/*브랜드 스토리까지 클리어를 주어야 하므로 float을 주지말고 position을준다 *//*중앙으로 보내려면 높이값의 반을 빼기*/
+
+.navInner ul > li:last-child > a {
+	border-bottom: none;
+}
+.navInner ul > li:last-child.open > a {
+	border-bottom: 1px solid #959595;
+}
+.navInner ul > li.open + li > a {
+	border-top: 1px solid #959595;
+}
+
+.navInner ul > li.open > a span {
+	background-image: url(../img/cjw-arrow-nav-top.png);
+}
+.navInner .wrap {
+	display: none;
+}
+.navInner .open .wrap {
+	display: block;
+} 
+.navInner ol {
+	background: #f8f8f8;
+}
+.navInner ol li {
+	width: 89.573%; margin-left: 4.502%; border-bottom: 1px solid #cfcfcf;
+}
+.navInner ol:last-child li:last-child {
+	border-bottom: none;
+}
+.navInner ol a {
+	display: block;
+	height: 45px; padding-left: 5.82%;
+	color: #747474; font-size: 1.4rem; line-height: 45px;
+}
+.navInner > a {
+	display: block; position: relative;
+	height: 58px; padding-left: 11.22%; border-bottom: 2px solid rgba(255,255,255,.5);
+	background: #02b5d6;
+	color: #fff; font-size: 1.7rem; line-height: 58px;
+}
+.navInner > a span {
+	position: absolute; right: 10.433%; top: 50%;
+	width: 27px; height: 26px; margin-top: -13px;
+	background: url(../img/cjw-icon-login.png) no-repeat; background-size: contain;
+}
+.navInner > a:last-child span {
+	background-image: url(../img/cjw-icon-phone.png);
+}
+
+/*비쥬얼 영역*/
+.visual        { height: 550px; background: url(../img/cjw-bg-main.jpg) 50% 50% no-repeat; background-size: cover; margin-top: 75px; text-align: center; padding-top: 172px; } /*네브영역 fixed로 겹쳐 있어서 네브 영역만큼 내려준다.*//*50% 50% 또는 center 로 바꿔주기*/
+.visual div:first-child ~ div {display: none;}
+
+/*
+.visual div {display: none;}
+.visual div:first-child {display: block;}*/
+
+.visual div i {font-size: 1.8rem; display: block; color: #fff; font-style: normal; margin-bottom: 14px;}
+.visual div span:first-child  {color: #81ebff;  }
+.visual div span:last-child  {color: #fff857; }/*글자는 스포이드가 아닌 직접 봐야한다.*/
+.visual div b {font-size: 4.3rem; color: #fff; display: block; font-weight: normal;}
+.visual div p {font-size: 1.4rem; color: #fff; margin:21px auto 32px; width: 80%; line-height: 1.28; } /*양옆에 패딩을 주는게 맞지만 이 수업에사는 위드값으로 진행*//*라인헤이트 /폰트사이즈 퍼센트가 어려우면 그냥 px값 1.8rem으로 넣기*/
+.visual div a { color: #fff; display: inline-block; font-size: 15px; width: 311px; height: 50px; border: 2px solid rgba(255,255,255,.6); border-radius: 5px; font-size: 1.5rem; line-height: 46px; background: rgba(0,0,0,.4);}
+/*폰트는 상속보다 전체 직접 준게 쌔다. *//*line-height= border가 2이므로 위 아래 4 빼주기*/
+
+/* 메뉴 바로가기 */
+.section    { height: 50px; background: #fff; border-bottom: 1px solid #959595; text-align: center; }
+.section.on {position: fixed; width: 100%; top: 75px; left: 0;} /*최상단의 네비가 75px이므로 그 밑에 나와야해서*/
+.section ul li {display: inline-block; width: 24%; font-size: 1.3rem;}
+.section ul li a {display: block; color: #959595; font-size: 1.3rem; line-height: 49px;}
+.section ul li.on a {color: #000;}
+
+/*
+ 두번째 방법
+.section    { height: 50px; background: #fff; border-bottom: 1px solid #959595; text-align: center; }
+.section.on {position: fixed; width: 100%; top: 75px; left: 0;} 최상단의 네비가 75px이므로 그 밑에 나와야해서
+.section ul {overflow: hidden;} 클리어
+.section ul li {float: left; width: 25%;}
+.section ul li a {display: block; color: #959595; font-size: 1.3rem; line-height: 49px;}
+.section ul li.on a {color: #000;} */
+
+/*maincontents*/
+/*brand story*/
+
+#story        {background: #f8f8f8; padding: 27px 0 64px;}
+.storyInner div {width: 82.93%; height: 328px; padding:23px 14px ; margin:0 auto; border: 3px solid #f47933; border-radius: 3px; background: url(../img/cjw-bg-smart.jpg) 100% 100% no-repeat #fff; background-size: auto 315px;} /*위드값이 퍼센트이므로 오토로줌*//*콘테인 커버를 주면 크면 안보일수 잇다 크기를 줄이면 작아지므로 100% 100% 주기 (right,bottom) 오른쪽으로 100% 위에서 100%로 간거라 */ /*right 10px bottom 10px*//*right 10px 100% 이런건 안되고 right 10px center 이렇게 줘야함 */
+/*로고 옆으로 패딩 값 재기*/
+.storyInner div:first-child ~div {display: none;} /*주석처리를 하면 전부 다 보임 만들때 주석처리 후 다 만들고 하나만 보이게 주석 풀기*/
+.storyInner div:nth-child(2) { border-color: #01b5d6; background-image: url(../img/cjw-bg-fresh.jpg); background-size: auto 412px; }
+.storyInner div:nth-child(3) {border-color: #ef4665; background-image:url(../img/cjw-bg-classic.jpg); background-size: auto 375px;}
+
+.storyInner div b {display: block; width: 72px; height: 31px; background: url(../img/cjw-logo-smart.png) 0 0 no-repeat; background-size: contain; text-indent: -99999px; margin-bottom: 7px; }/*가로값이 7231로 고정이므로 콘테인이든 아무거도 줘도됨*/ /*라이헤이트랑 겹쳐지므로 반내림*//*라인헤이트의간격 16이므로 8이고 로고와의 간격이 23 이므로 11.5 이므로 라인헤이트는 위 아래로 4인거니까 11.5-4 */
+.storyInner div:nth-child(2) b    {background-image: url(../img/cjw-logo-fresh.png);}
+.storyInner div:nth-child(3) b    {background-image: url(../img/cjw-logo-classic.png);}
+.storyInner div i {font-size: 2rem; color: #343434; line-height: 1.325; font-style: normal;  word-break: keep-all; }
+.storyInner div i span { display: block;} /*항상 내려가 있음 그래서 블럭요소이기도 하고 br 을 안쓴느 이유는 이부분만 태블릿이나 px버젼에서는 다른 요소, 스타일로 변할수도 있어서 span 으로 감쌋다. 하지만 다른 요소로 감싸도 상관없음 */
+.storyInner div p {font-size: 1.3rem; line-height: 1.23; line-height: 1.154; margin: 13px 0 15px; word-break: keep-all;}
+.storyInner div a {font-size: 1.1rem; width: 150px; height: 35px; border: 2px solid #cfcfcf; background: #fff;
+	color: #343434; font-size: 1.1rem; line-height: 33px; text-align: center; display: block; }/*인라인블럭을 자주 안주는게 좋음 가로정렬이 가능할때 많이 쓰는게 좋음 *//*라인헤이티 - > 헤이트:35- 보더값 4 가 아닌 헤이트(70 - 4) /2 그래야 가운데에 맞게 나옴  */
+.storyInner div a span {
+	display: inline-block;
+	width: 8px; height: 8px; margin-left: 15px;
+	background: url(../img/cjw-plus-story-orange.png) 0 0 no-repeat; background-size: contain;
+}/*같은줄에 있어서 인라인블럭*/
+.storyInner div:nth-of-type(2) a span {
+	background-image: url(../img/cjw-plus-story-blue.png);
+}/*차일드로 사용해도됨 둘의 차이점 알기*/
+.storyInner div:nth-of-type(3) a span {
+	background-image: url(../img/cjw-plus-story-red.png);
+}
+
+/* food cast */ 
+/*html5에서만 a태그안에 h와 p가 들어갈수있음 그 전버젼에서는 h대신 strong p대신 em으로 대체해서 사용 하는게 좋기도함 html5는 모두 호환이 안되므로  */
+/*#pb_ 아이디를 많이 써야할경우 퍼블리셔 pb*/
+#cast        { background: #f8f8f8; padding-bottom: 30px; } /*배경색을 줘야해서 패딩 */
+.castInner .title {height: 147px; background: url(../img/cjw-bg-foodCast.jpg) center no-repeat; background-size: cover; text-align: center; padding-top: 39px; margin-bottom: 19px;}/*h3가 모양은 다 똑같지만 공통으로 하나만 만들어도 되지만 반응형이기에 여러가지 만듬 *//*가로기준 크기 무시하고 커버 컨테인은 세로기준 들어감 */
+.title h3 {font-size: 3.3rem; margin-bottom: 15px; color: #fff; font-weight: normal;}
+.title a {display: inline-block; font-size: 1.3rem; width: 230px; height: 40px; border: 2px solid rgba(255,255,255,0.6); line-height: 38px; color: #fff; background-color: rgba(0,0,0,.4);}
+.title a span {display: inline-block;width: 10px; height: 10px; background: url(../img/cjw-plus-story-blue.png) 0 0 no-repeat; margin-left: 11px; background-size: contain;}
+.castInner .slider { width: 82.933%; padding: 2px; margin:0 auto 61px; border: 1px solid 
+    rgba(149,149,149,.6); background: #fff; border-radius: 3px; background-size: cover;} /*보더 빼서 패딩 2px*/
+.castInner .slider div:first-child ~ div { display: none; }
+.castInner .slider div>span     { display: block; height: 199px; background: url(../img/cjw-img-foodCast.jpg) center no-repeat; background-size: cover;}
+.castInner .slider div a {display: block; text-align: center; padding: 15px 0 17px;} /*30 34*/
+.castInner .slider div a b, 
+.castInner .slider div a p, 
+.castInner .slider div a span {display: none;}
+.castInner .slider div h4 {font-size: 1.3rem; color: #626262; font-weight: normal; line-height: 1.154;} /*88-64 = 24 하는데 말도안됨 그래서 그냥 1.154*/
+.castInner .banner     {display: block; width: 82.933%; margin: 0 auto 11px; border-radius: 3px; color: #000; background:url(../img/cjw-icon-foodLab.png) 14px 50% no-repeat #02b5d6; padding: 25px 39px 24px 99px; background-size: 58px auto; position: relative;}/*psd상에서 보이는 이미지의 절반값을 줘야함*/
+.castInner .banner h4 {font-size: 2rem; font-weight: normal; margin-bottom: 10px;}/* 원래는 마진 바텀이 7인이유는 p와p 사이가 6이므로 반인 3을 빼줘야 함 라인헤이트가 위 아래 3씩있는거니까 그런데 그냥 편하게 여러줄일 경우 라인헤이트 주고 한줄일경우 반인 10을 밑에 준다 */
+.castInner .banner p {font-size: 1.1rem; line-height: 1.18;} 
+.castInner .banner span {position: absolute; right: 12px; top: 50%;  width: 16px; height: 28px; background: url(../img/cjw-arrow-section-right.png) 0 0 no-repeat; background-size: contain; text-indent: -9999px; margin-top: -14px;} /*반올림하고 또 반올림 해야할 경우에는 반내림으로 처리 */
+.castInner .banner:last-child 	{ background-image:url(../img/cjw-icon-bottleRecipe.png); background-color:#76d9c5; background-size:59px auto; margin-bottom:0; } /*last-of-type*/
+
+/*food know*/
+#knowhow {
+	padding-bottom: 31px;
+	background: #f8f8f8;
+    padding-bottom: 30px;
+}
+.knowhowInner .title {
+	height: 147px; padding-top: 39px; margin-bottom: 19px;
+	background: url(../img/cjw-bg-foodKnowhow-mobile.jpg) no-repeat center; background-size: cover;
+	text-align: center;
+}
+.knowhowInner h3 {
+	margin-bottom: 12px;
+	color: #fff; font-size: 3.3rem; font-weight: normal;
+}
+.knowhowInner .title a {
+	display: inline-block;
+	width: 230px; height: 40px; border: 2px solid rgba(255,255,255,.6); 
+	background: rgba(0,0,0,.4);
+	color: #fff; font-size: 1.3rem; line-height: 38px;
+}
+knowhowInner .title a {
+	display: inline-block;
+	width: 230px; height: 40px; border: 2px solid rgba(255,255,255,.6); 
+	background: rgba(0,0,0,.4);
+	color: #fff; font-size: 1.3rem; line-height: 38px;
+}
+.knowhowInner .title a span {
+	display: inline-block;
+	width: 10px; height: 10px; margin-left: 11px;
+	background: url(../img/cjw-plus-section-yellow.png) no-repeat; background-size: contain;
+}
+.knowhowInner .slider {
+	width: 82.933%; padding: 2px; margin: 0 auto 61px; border: 1px solid rgba(149,149,149,.6); border-radius: 3px;
+	background: #fff;
+}
+.knowhowInner .slider div:first-child ~ div {display: none;}
+.knowhowInner .slider div > span {
+	display: block;
+	height: 199px;
+	background: url(../img/cjw-img-specialRecipe.jpg) no-repeat center; background-size: cover;
+}
+.knowhowInner .slider div a {
+	display: block;
+	padding: 15px 0 17px;
+}
+.knowhowInner .slider div a b, 
+.knowhowInner .slider div a h4,
+.knowhowInner .slider div a > span { display: none;}
+.knowhowInner .slider div p { color: #626262; font-size: 1.3rem; text-align: center; line-height: 1.154; }
+
+.knowhowInner .banner {display: block; width: 82.933%; margin: 0 auto 11px; border-radius: 3px; color: #000; background:url(../img/cjw-icon-cjwRecipe.png) 14px 50% no-repeat #76d9c5; padding: 25px 39px 24px 99px; background-size: 58px auto; position: relative; }
+
+.knowhowInner .bannerWrap a:nth-child(1),
+.knowhowInner .bannerWrap a:nth-child(2),
+.knowhowInner .bannerWrap a:nth-child(4)     {display: none;}
+
+/*
+.knowhowInner .bannerWrap>a {display: none;}
+.knowhowInner .bannerWrap>a.banner {display: block;}*/
+.knowhowInner .bannerWrap .banner {background-image: url(../img/cjw-icon-eShop.png); background-color: #f4cb4d; margin-bottom: 0; }
+.knowhowInner .banner h4 {font-size: 2rem; font-weight: normal; margin-bottom: 10px;}
+.knowhowInner .banner p {font-size: 1.1rem; line-height: 1.181;}
+.knowhowInner .banner>span {position: absolute; right: 12px; top: 50%;  width: 16px; height: 28px; background: url(../img/cjw-arrow-section-right.png) 0 0 no-repeat; background-size: contain; text-indent: -9999px; margin-top: -14px;}
+
+/* #friends */
+#friends {
+	padding-bottom: 31px;
+	background: #f8f8f8;
+}
+.friendsInner .title {
+	height: 147px; padding-top: 39px; margin-bottom: 19px;
+	background: url(../img/cjw-bg-friends.jpg) no-repeat center; background-size: cover;
+	text-align: center;
+}
+.friendsInner h3 {
+	margin-bottom: 12px;
+	color: #fff; font-size: 3.3rem; font-weight: normal;
+}
+.friendsInner .title a {
+	display: inline-block;
+	width: 230px; height: 40px; border: 2px solid rgba(255,255,255,.6); 
+	background: rgba(0,0,0,.4);
+	color: #fff; font-size: 1.3rem; line-height: 38px;
+}
+.friendsInner .title a span {
+	display: inline-block;
+	width: 10px; height: 10px; margin-left: 11px;
+	background: url(../img/cjw-plus-section-green.png) no-repeat center; background-size: contain;
+}
+.friendsInner .banner {
+	display: block; position: relative;
+	width: 82.933%; margin: 0 auto 10px;
+}
+.friendsInner .banner:nth-of-type(1) {
+	overflow: hidden;
+	padding: 25px 11px;
+	background: #f4cb4d;
+	color: #000;
+}
+.friendsInner .banner:nth-of-type(1) .bg {
+	position: absolute; bottom: 0; right: -32px;
+	width: 139px; height: 139px;
+	background: url(../img/cjw-icon-foodBox.png) no-repeat; background-size: contain;
+}
+.friendsInner .banner:nth-of-type(1) b {
+	font-size: 1.8rem; line-height: 1.111; font-weight: normal;
+}
+.friendsInner .banner:nth-of-type(1) .line {
+	display: block;
+	width: 67.524%; height: 2px; margin: 15px 0;
+	background: rgba(255,255,255,.5);
+}
+.friendsInner .banner:nth-of-type(1) p {
+	margin-bottom: 22px;
+	font-size: 1.1rem; line-height: 1.182;
+}
+.friendsInner .banner:nth-of-type(1) span:last-child {
+	display: block;
+	width: 145px; height: 35px; border: 2px solid #fff;
+	background: rgba(255,255,255,.5);
+	font-size: 1.3rem; line-height: 33px; text-align: center;
+}
+.friendsInner .banner:nth-of-type(2) {
+	padding: 25px 51px 24px 99px;
+	background: #02b5d6 url(../img/cjw-icon-friendsPanel.png) no-repeat 14px 50%; background-size: 59px;
+	color: #fff;
+}
+.friendsInner .banner:nth-of-type(2) h4 {
+	margin-bottom: 10px;
+	font-size: 1rem; font-weight: normal;
+}
+.friendsInner .banner:nth-of-type(2) p {
+	font-size: 1.2rem; line-height: 1.083;
+}
+.friendsInner .banner:nth-of-type(2) span {
+	position: absolute; top: 50%; right: 12px;
+	width: 16px; height: 28px; margin-top: -14px;
+	background: url(../img/cjw-arrow-section-right.png) no-repeat center; background-size: contain;
+	text-indent: -9999px;
+}
+.friendsInner .box {
+	width: 82.933%; margin: 0 auto;
+}
+.friendsInner .bannerBox {
+	float: left;
+	width: 50%; height: 113px; padding-top: 13px; border: 2px solid #cfcfcf;
+	background: #fff;
+	text-align: center;
+}
+.friendsInner .bannerBox:last-child {
+	border-left: none;
+}
+.friendsInner .bannerBox h4 {
+	padding-top: 70px;
+	background: url(../img/cjw-icon-foodEditor.png) no-repeat top center; background-size: 62px;
+	color: #000; font-size: 1.2rem; font-weight: normal;
+}
+.friendsInner .bannerBox:last-child h4 {
+	background-image: url(../img/cjw-icon-meetingTalk.png); background-position: 50% 5px; background-size: 53px;
+}
+
+	/* #sns */
+#sns {
+	padding: 36px 0 33px;
+}
+.snsInner .title {
+	text-align: center;
+}
+.snsInner h3 {
+	margin-bottom: 14px;
+	font-size: 3.3rem; font-weight: normal;
+}
+.snsInner .title p {
+	color: #4b4b4b; font-size: 1.4rem;
+}
+.snsInner .sns {
+	margin: 20px 0 32px;
+	text-align: center;
+}
+.snsInner .sns a {
+	display: inline-block;
+	width: 35px; height: 35px; margin-right: 20px;
+	background: url(../img/cjw-sns-facebook.png) no-repeat; background-size: contain;
+	text-indent: -9999px;
+}
+.snsInner .sns a:nth-child(2) {
+	background-image: url(../img/cjw-sns-kakao.png);
+}
+.snsInner .sns a:nth-child(3) {
+	background-image: url(../img/cjw-sns-blog.png);
+}
+.snsInner .sns a:nth-child(4) {
+	background-image: url(../img/cjw-sns-twitter.png);
+}
+.snsInner .sns a:nth-child(5) {
+	background-image: url(../img/cjw-sns-instagram.png);
+}
+.snsInner .sns a:nth-child(6) {
+	margin-right: 0;
+	background-image: url(../img/cjw-sns-youtube.png);
+}
+.snsInner .box {
+	width: 82.933%; margin: 0 auto;
+}
+.snsInner .box a {
+	display: block;
+	height: 160px; border: 2px solid #f8f7f7;
+}
+.snsInner .box a:last-child {
+	border-top: none;
+}
+.snsInner .box a span {
+	float: left;
+	width: 50%; height: 100%; border-right: 2px solid #f8f7f7;
+	background: url(../img/cjw-img-snsNaver.jpg) no-repeat center; background-size: cover;
+}
+.snsInner .box a:last-child span {
+	float: right; 
+	border-right: none; border-left: 2px solid #f8f7f7;
+	background-image: url(../img/cjw-img-snsFacebook.jpg);
+}
+.snsInner .box .text {
+	float: left; position: relative;
+	width: 50%; height: 100%; padding: 18px 5px 0;
+}
+.snsInner .box h4 {
+	height: 18px;
+	background: url(../img/cjw-sns-blog.png) no-repeat right center; background-size: contain;
+	color: #000; font-size: 1.3rem; line-height: 18px; font-weight: normal;
+}
+.snsInner .box a:last-child h4 {
+	background-image: url(../img/cjw-sns-facebook.png);
+}
+.snsInner .box p {
+	position: absolute; left: 0; bottom: 15px;
+	padding: 0 5px;
+	color: #494949; font-size: 1.3rem; line-height: 1.077;
+}
+
+/* footer */
+footer {
+	border-top: 1px solid #cfcfcf;
+	background: #fbfbfb;
+}
+footer a {
+	color: #767676;
+}
+.snsWrap > a {
+	display: block;
+	height: 50px; padding-left: 8.533%; border-bottom: 1px solid #cfcfcf;
+	color: #02b5d6; font-size: 1.2rem; line-height: 50px;
+}
+.snsWrap li {
+	float: left;
+	width: 50%; border-bottom: 1px solid #cfcfcf;
+}
+.snsWrap li:nth-child(even) {
+	border-left: 1px solid #cfcfcf;
+}
+.snsWrap li a {
+	display: block;
+	height: 50px; padding-left: 17.067%;
+	font-size: 1.2rem; line-height: 50px;
+}
+.snsWrap li a:hover, .snsWrap li a:focus {
+	color: #000;
+}
+.copyWrap > span a {
+	float: left;
+	width: 50%; height: 50px; padding-left: 17.2%; border-bottom: 1px solid #cfcfcf;
+	background: url(../img/cjw-logo-ccm.png) no-repeat 17.067% 50%; background-size: auto 26px;
+	font-size: 1rem; line-height: 50px;
+}
+.copyWrap > span a:last-child {
+	border-left: 1px solid #cfcfcf;
+	background-image: url(../img/cjw-logo-wa.png); background-size: auto 24px;
+}
+.copy {
+	margin-top: 29px;
+	text-align: center;
+}
+.copy img {
+	width: 40px; margin-bottom: 25px;
+}
+.copy p > span {
+	display: none;
+}
+.copy .phone {
+	color: #666; font-size: 1.1rem; line-height: 1.455; font-style: normal;
+}
+.copy .phone span:first-child:after {
+	content: "|";
+	margin: 0 11px;
+}
+.copy .phone span:last-child {
+	display: block;
+}
+footer small {
+	display: block;
+	height: 45px; margin-top: 27px;
+	background: #666;
+	color: #fbfbfb; font-size: 1rem; line-height: 45px;
+}
+
+
+@media all and (min-width: 768px){
+    *     { font-family: 'Spoqa Han Sans', sans-serif; }
+    .navWrap {height: 80px;} /*모바일이 아니므로 고정 위에 상속 되므로 바뀌는것만 쓰기*/
+    h1     {top: 26px; width: 107px; margin-left: -53.5px;}
+    .searchWrap form>button     {width: 30px; height: 30px; left:5.208%; top: 30px; }
+    .searchOn close     {font-size: 2.1rem;}
+    .searchOn input { height: 40px; line-height: 40px; padding: 0 10px; margin:23px 1.953% 0; border-radius: 5px;font-size: 2.1rem;  width: 71.614% } /*라인헤이트를 빼고 패딩을 줘도 된다 padding: 10px; 메이비 */
+    .searchOn button     {width: 70px; height: 40px; border-radius: 5px; background-size: 20px;}
+    
+    .navBtn {top: 32px; right: 5.208%; width: 42px; height: 26px;}
+    .navBtn span { height: 6px; border-radius: 3px; } 
+    .navBtn span:nth-child(2) {margin: 4px 0;}
+    
+
+    .navInner {width: 66.14%; padding: 29px 0 0;} 
+    .navInner>strong {width: 83.07%; margin-bottom:16px; } 
+    .navInner>strong span     { width: 100px; height: 35px;}
+    .navInner>strong>a        {font-size: 2.1rem; line-height: 35px; background-size: contain; } 
+    
+    .navInner ul     {width: 83.07%;  } 
+    .navInner ul>li>a {height: 91px; line-height: 91px; font-size: 2.5rem; padding-left: 4.265%;} 
+    .navInner ul>li>a span { width: 20px; height: 10px;
+    margin-top: -5px; }
+    
+    .navInner ol a {
+        height: 70px; padding-left: 5.55%;
+        font-size: 2.1rem; line-height: 70px;
+    }/*보더까지 */
+    
+    .navInner > a {
+        height: 100px; padding-left: 10.62%;    
+        font-size: 2.5rem; line-height: 100px;
+    }
+    .navInner > a span {
+        right: 12%; top: 50%;
+        width: 40px; height: 40px; margin-top: -20px;
+    }
+   
+    .visual        { height: 750px; margin-top: 80px; text-align: center; padding-top: 180px; }
+
+    /*    .visual div:first-child ~ div {display: none;}*/
+
+    /*
+    .visual div {display: none;}
+    .visual div:first-child {display: block;}*/
+
+    .visual div i {font: 3.3rem 'nbgR'; margin-bottom: 23px; }
+    .visual div i * { font: 3.3rem 'nbgR' }
+    .visual div b {font: 7.5rem 'nbgR'; }
+    .visual div p {font-size: 2.4rem; margin:32px auto 34px; width: 67.708%; } /*양옆에 패딩을 주는게 맞지만 이 수업에사는 위드값으로 진행*//*라인헤이트 /폰트사이즈 퍼센트가 어려우면 그냥 px값 1.8rem으로 넣기*//*넓이값 520으로 계산 520/7.68*/
+    .visual div a {font-size: 2.1rem; width: 300px; height: 70px; border: 2px solid rgba(255,255,255,.6); border-radius: 2px; line-height: 66px; background: rgba(0,0,0,.4);}
+    /*폰트는 상속보다 전체 직접 준게 쌔다. *//*line-height= border가 2이므로 위 아래 4 빼주기*/
+    
+    
+    
+  #story {
+		padding: 36px 0 97px;
+	}
+	.storyInner {
+		width: 80.99%; margin: 0 auto;
+	}
+	.storyInner div {
+		float: left;
+		width: 49.518%; height: 375px; padding: 22px; margin-left: 0.965%; border-width: 2px; border-radius: 4px;
+		background-size: auto 313px;
+	}
+	.storyInner div:first-child {
+		margin-left: 0;
+	}
+	/* slider */
+	#story .storyInner div:nth-child(2) {
+		display: block;
+	}
+	.storyInner div:nth-child(2) {
+		background-size: auto 464px;
+	}
+	.storyInner div:nth-child(3) {
+		background-size: auto 360px;
+	}
+	.storyInner div b {
+		margin-bottom: 13px;
+	}
+	.storyInner div p {
+		margin: 15px 0 28px;
+		font-size: 1.7rem;
+	}
+	.storyInner div a {
+		width: 188px; height: 45px;
+		font-size: 1.5rem; line-height: 43px;
+	}
+	.storyInner div a span {
+		width: 15px; height: 15px; margin-left: 18px;
+	}
+	
+		/* #cast */
+	#cast {
+		padding-bottom: 106px;
+	}
+	.castInner .title {
+		height: 294px; padding-top: 83px; margin-bottom: 38px;
+	}
+	.castInner h3 {
+		margin-bottom: 30px;
+		font: 5.8rem nbgR, sans-serif;
+	}
+	.castInner .title a {
+		width: 350px; height: 70px;
+		font-size: 2.1rem; line-height: 68px;
+	}
+	.castInner .title a span {
+		width: 20px; height: 20px; margin-left: 36px;
+	}
+	.castInner .slider {
+		width: 84.375%; padding: 3px; margin-bottom: 122px; border-width: 2px; border-radius: 5px;
+	}
+	.castInner .slider div > span {
+		height: 397px; 
+	}
+	.castInner .slider div a {
+		padding: 30px 0 34px;
+	}
+	.castInner .slider div h4 {
+		font-size: 2.4rem; line-height: 1.25;
+	}
+	.castInner .banner {
+		width: 84.375%; padding: 55px 105px 54px 157px; margin-bottom: 20px; border-radius: 5px;
+		background-position: 28px 50%; background-size: 100px;
+	}
+	.castInner .banner h4 {
+		margin-bottom: 22px;
+		font-size: 3.3rem;
+	}
+	.castInner .banner p {
+		font-size: 2rem; line-height: 1.3;
+	}
+	.castInner .banner > span {
+		right: 35px;
+		width: 29px; height: 54px; margin-top: -27px;
+	}
+	
+		/* #knowhow */
+	#knowhow {
+		padding-bottom: 106px;
+	}
+	.knowhowInner .title {
+		height: 294px; padding-top: 83px; margin-bottom: 38px;
+	}
+	.knowhowInner h3 {
+		margin-bottom: 30px;
+		font: 5.8rem nbgR, sans-serif;
+	}
+	.knowhowInner .title a {
+		width: 350px; height: 70px;
+		font-size: 2.1rem; line-height: 68px;
+	}
+	.knowhowInner .title a span {
+		width: 20px; height: 20px; margin-left: 36px;
+	}
+	.knowhowInner .slider {
+		width: 84.375%; padding: 3px; margin-bottom: 122px; border-width: 2px; border-radius: 5px;
+	}
+	.knowhowInner .slider div > span {
+		height: 397px; 
+	}
+	.knowhowInner .slider div a {
+		padding: 30px 0 34px;
+	}
+	.knowhowInner .slider div p {
+		font-size: 2.4rem; line-height: 1.25;
+	}
+	.knowhowInner .banner {
+		width: 84.375%; padding: 54px 105px 50px 157px; margin-bottom: 20px; border-radius: 5px;
+		background-position: 28px 50%; background-size: 100px;
+	}
+	.knowhowInner .banner h4 {
+		margin-bottom: 22px;
+		font-size: 3.3rem;
+	}
+	.knowhowInner .banner p {
+		font-size: 2rem; line-height: 1.3;
+	}
+	.knowhowInner .banner > span {
+		right: 35px;
+		width: 29px; height: 54px; margin-top: -27px;
+	}
+	
+		/* #friends */
+	#friends {
+		padding-bottom: 63px;
+	}
+	.friendsInner .title {
+		height: 294px; padding-top: 83px; margin-bottom: 38px;
+	}
+	.friendsInner h3 {
+		margin-bottom: 30px;
+		font: 5.8rem nbgR, sans-serif;
+	}
+	.friendsInner .title a {
+		width: 350px; height: 70px;
+		font-size: 2.1rem; line-height: 68px;
+	}
+	.friendsInner .title a span {
+		width: 20px; height: 20px; margin-left: 36px;
+	}
+	.friendsInner .banner {
+		width: 84.375%; margin-bottom: 20px;
+	}
+	.friendsInner .banner:nth-of-type(1) {
+		padding: 53px 37px;
+	}
+	.friendsInner .banner:nth-of-type(1) .bg {
+		right: -50px;
+		width: 277px; height: 277px;
+	}
+	.friendsInner .banner:nth-of-type(1) b {
+		font-size: 3.3rem;
+	}
+	.friendsInner .banner:nth-of-type(1) .line {
+		width: 64.815%; height: 3px; margin: 31px 0;
+	}
+	.friendsInner .banner:nth-of-type(1) p {
+		margin-bottom: 46px;
+		font-size: 2rem;
+	}
+	.friendsInner .banner:nth-of-type(1) span:last-child {
+		width: 250px; height: 70px; 
+		font-size: 2.1rem; line-height: 68px;
+	}
+	.friendsInner .banner:nth-of-type(2) {
+		padding: 54px 105px 50px 157px; margin-bottom: 40px;
+		background-position: 28px 50%; background-size: 110px;
+	}
+	.friendsInner .banner:nth-of-type(2) h4 {
+		margin-bottom: 20px;
+		font-size: 1.8rem;
+	}
+	.friendsInner .banner:nth-of-type(2) p {
+		font-size: 2rem; line-height: 1.3;
+	}
+	.friendsInner .banner:nth-of-type(2) span {
+		right: 35px;
+		width: 29px; height: 54px; margin-top: -27px;
+	}
+	.friendsInner .box {
+		width: 84.375%;
+	}
+	.friendsInner .bannerBox {
+		height: 225px; padding-top: 25px;
+	}
+	.friendsInner .bannerBox h4 {
+		padding-top: 141px; 
+		background-size: 123px;
+		font-size: 2.1rem;
+	}
+	.friendsInner .bannerBox:last-child h4 {
+		background-position: 50% 9px; background-size: 106px;
+	}
+	
+		/* #sns */
+	#sns {
+		padding: 76px 0 86px;
+	}
+	.snsInner h3 {
+		margin-bottom: 24px;
+		font: 5.8rem nbgR, sans-serif;
+	}
+	.snsInner .title p {
+		font-size: 2.1rem;
+	}
+	.snsInner .sns {
+		margin: 50px 0 62px;
+	}
+	.snsInner .sns a {
+		width: 70px; height: 70px; margin-right: 40px;
+	}
+	.snsInner .box {
+		width: 84.375%;
+	}
+	.snsInner .box a {
+		height: 280px;
+	}
+	.snsInner .box .text {
+		padding: 35px 14px 0;
+	}
+	.snsInner .box h4 {
+		height: 36px;
+		font-size: 1.8rem; line-height: 36px;
+	}
+	.snsInner .box p {
+		bottom: 46px;
+		padding: 0 14px;
+		font-size: 2rem;
+	}
+	
+	/* footer */
+	.snsWrap > a {
+		height: 100px; padding-left: 7.422%;
+		font-size: 2rem; line-height: 100px;
+	}
+	.snsWrap li a {
+		height: 80px; padding-left: 15.2%;
+		font-size: 2rem; line-height: 80px;
+	}
+	.copyWrap > span a {
+		height: 80px; padding-left: 13.467%;
+		background-position: 15.2% 50%; background-size: auto 35px;
+		font-size: 2rem; line-height: 80px;
+	}
+	.copyWrap > span a:last-child {
+		background-size: auto 42px;
+	}
+	.copy {
+		margin-top: 43px;
+	}
+	.copy img {
+		width: auto; margin-bottom: 49px;
+	}
+	.copy .phone {
+		font-size: 2.2rem;
+	}
+	.copy .phone span:first-child:after {
+		margin: 0 22px;
+	}
+	footer small {
+		height: 88px; margin-top: 57px;
+		font-size: 1.8rem; line-height: 88px;
+	}
+	
+}
