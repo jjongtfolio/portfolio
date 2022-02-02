@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
+    <title></title>
+    <!-- favicon -->
+    <link rel="icon" type="imag/png" href="imgs/favicon.png">
+    <!-- web font  -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/e75d5f7ac3.js" crossorigin="anonymous"></script>
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- script -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="js/main.js" defer></script>
+    <title>포트폴리오</title>
+    <link rel="short icon" href="img/2014.ico">
+    
+</head>
+
+<body>
+   <nav class="navbar">
+        <div class="navbar_logo">
+<!--           <i class="fab fa-accusoft"></i>-->
+            <i class="fas fa-battery-full"></i>
+            <a href="#">PORTFOLIO</a>
+        </div>
+        <ul class="navbar_menu">
+           <li><a href="../index.html" target="_blank">홈</a></li>
+           <li><a href="../RESUME/index.html" target="_blank">이력서</a></li>
+           <li><a href="#" onclick="openPopup()">미니홈피</a></li>
+           <li><a href="#">포트폴리오</a></li>
+<!--           <li><a href="#">Bookings</a></li>-->
+        </ul>
+        <ul class="navbar_icons">
+            <li><a href="https://bit.ly/3GZvdfY" target="_blank"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="https://bit.ly/3qXPPjq" target="_blank"><i class="fab fa-facebook"></i></a></li>
+        </ul>
+        
+        <a href="#" class="navbar_togleBtn">
+            <i class="fas fa-bars"></i>
+        </a>
+    </nav>
+    <!-- Work -->
+    <section id="work" class="section">
+        <div class="section_container">
+            <h2>PORTFOLIO</h2>
+            <h3>Projects</h3>
+            <div class="work_nav">
+                <button class="work_btn selected" data-filter="*">All <span class="work_num">10</span>
+                </button>
+                <button class="work_btn" data-filter="MARKETING">MARKETING <span class="work_num">2</span>
+                </button>
+                <button class="work_btn" data-filter="DESIGN">DESIGN<span class="work_num">2</span>
+                </button>
+                <button class="work_btn" data-filter="WEB">WEB <span class="work_num">5</span>
+                </button>
+                <button class="work_btn" data-filter="Etc">Etc <span class="work_num">1</span></button>
+            </div>
+            <div class="work_project">
+                <div class="project" target="_blank" data-type="MARKETING">
+                    <img class="project_img" src="img/project01.png" alt="">
+                    <div class="project_text">
+                        <div>
+                            <h4>PROJECT</h4>
+                            <p>광고 분석 및 개인 역량  <br> 마케팅 포트폴리오</p>
+                        </div>
+                        <div class="">
+<!--                            <a class="p-2" href="" target="blank">기획</a>-->
+                            <a class="p-2 ml-2" href="%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4ver6.pdf" target="_blank">PDF</a>
+<!--                            <a class="p-2 ml-2" href="" target="blank">코딩</a>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="project" target="_blank" data-type="MARKETING">
+                    <img class="project_img" src="img/project02.png" alt="">
+                    <div class="project_text">
+                        <div>
+                            <h4>PROJECT</h4>
+                            <p>마케팅 솔루션 <br> 땡큐캠핑</p>
+                        </div>
+                        <div class="">
+<!--                            <a class="p-2" href="" target="blank">기획</a>-->
+                            <a class="p-2 ml-2" href="">PDF</a>
+<!--                            <a class="p-2 ml-2" href="" target="blank">코딩</a>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="project" target="_blank" data-type="DESIGN">
+                    <img class="project_img" src="img/project03.png" alt="">
+                    <div class="project_text">
+                        <div>
+                            <h4>PROJECT</h4>
+                            <p>MUSICPLANT <br>랜딩페이지&#40;event&#41;</p>
+                        </div>
+                        <div class="">
+<!--                            <a class="p-2" href="" target="blank">기획</a>-->
+                            <a class="p-2 ml-2" href="https://www.figma.com/file/aO2uv4plNAnpG1lFWVhrDW/MUSICPLANT?node-id=0%3A1" target="_blank">디자인</a>
+<!--                            <a class="p-2 ml-2" href="" target="blank">코딩</a>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="project" target="_blank" data-type="DESIGN">
+                    <img class="project_img" src="img/project04.png" alt="">
+                    <div class="project_text">
+                        <div>
+                            <h4>PROJECT</h4>
+                            <p>'아지랑이' phone case<br>랜딩페이지</p>
+                        </div>
+                        <div class="">
+<!--                            <a class="p-2" href="" target="blank">기획</a>-->
+                            <a class="p-2 ml-2" href="https://www.figma.com/file/l3UomAXpchvbkZvBRASg3R/AZRANGE?node-id=0%3A1" target="_blank">디자인</a>
+<!--                            <a class="p-2 ml-2" href="" target="blank">코딩</a>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="project" target="_blank" data-type="DESIGN">
+                    <img class="project_img" src="img/project05.png" alt="">
+                    <div class="project_text">
+                        <div>
+                            <h4>PROJECT</h4>
+                            <p>아지캣스토어 <br>상품 상세페이지</p>
+                        </div>
+                        <div class="">
+<!--                            <a class="p-2" href="" target="blank">기획</a>-->
+                            <a class="p-2 ml-2" href="https://www.figma.com/file/u5LccwbHXBTz0UEdegboX2/AGECATSTORE?node-id=0%3A1" target="_blank">디자인</a>
+<!--                            <a class="p-2 ml-2" href="" target="blank">코딩</a>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="project" target="_blank" data-type="WEB">
+                    <img class="project_img" src="img/project06.png" alt="">
+                    <div class="project_text">
+                        <div>
+                            <h4>PROJECT</h4>
+                            <p>클론코딩 <br> 청정원 홈페이지</p>
+                        </div>
+                        <div class="">
+<!--                            <a class="p-2" href="" target="blank">..</a>-->
+                            <a href="../CJW/cjw.html" target="_blank" class="p-2 ml-2">WEB</a>
+<!--                            <a class="p-2 ml-2" href="" target="blank">..</a>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="project" target="_blank"data-type="WEB">
+                    <img class="project_img" src="img/project07.png" alt="">
+                    <div class="project_text">
+                        <div>
+                            <h4>PROJECT</h4>
+                            <p>클론코딩 <br> Starbucks</p>
+                        </div>
+                        <div class="">
+<!--                            <a class="p-2" href="" target="blank">..</a>-->
+                            <a href="../starbucks/starbucks.html" target="_blank" class="p-2 ml-2" >WEB</a>
+<!--                            <a class="p-2 ml-2" href="" target="blank">..</a>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="project" target="_blank" data-type="Etc">
+                    <img class="project_img" src="img/project08.png" alt="">
+                    <div class="project_text">
+                        <div class="">
+                            <h4>PROJECT</h4>
+                            <p>클론코딩 &amp; 유튜브 영상 제작 <br> ADOBE</p>
+                        </div>
+                        <div class="">
+<!--                            <a class="p-2" href="" target="blank">..</a>-->
+                            <a href="../youtube/youtube.html" class="p-2 ml-2" target="_blank">VIDEO</a>
+<!--                            <a class="p-2 ml-2" href="" target="blank">..</a>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="project" target="_blank" data-type="WEB">
+                    <img class="project_img" src="img/project09.png" alt="">
+                    <div class="project_text">
+                        <div class="">
+                            <h4>PROJECT</h4>
+                            <p>클론코딩 <br> 가짜 사나이</p>
+                        </div>
+                        <div class="">
+<!--                            <a class="p-2" href="" target="blank">..</a>-->
+                            <a href="../sanai/sanai.html" class="p-2 ml-2" target="_blank">WEB</a>
+<!--                            <a class="p-2 ml-2" href="" target="blank">..</a>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="project" target="_blank" data-type="WEB">
+                    <img class="project_img" src="img/project10.png" alt="">
+                    <div class="project_text">
+                        <div class="">
+                            <h4>PROJECT</h4>
+                            <p>클론코딩 <br> Cyworld</p>
+                        </div>
+                        <div class="">
+<!--                            <a class="p-2" href="" target="blank">..</a>-->
+                            <a href="#" onclick="openPopup()" class="p-2 ml-2">WEB</a>
+<!--                            <a class="p-2 ml-2" href="" target="blank">..</a>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="project" target="_blank" data-type="WEB">
+                    <img class="project_img" src="img/project11.png" alt="">
+                    <div class="project_text">
+                        <div class="">
+                            <h4>PROJECT</h4>
+                            <p>클론코딩 <br> Login Page</p>
+                        </div>
+                        <div class="">
+                            <a href="../login/login.html" class="p-2 ml-2" target="_blank">WEB</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        function openPopup(){
+        window.open("../cyworld/home.html", "new", "toolbar=no, menubar=no, scrollbars=no, resizable=no, width=1280, height=721, left=0, top=0" );
+        }
+         
+    </script>
+
+</body>
+
+</html>
