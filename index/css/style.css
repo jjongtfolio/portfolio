@@ -78,7 +78,7 @@ em {
 	margin: auto;
 	border-bottom: 5px solid #222;
 	padding-bottom: 50px;
-	margin-bottom: 60px;
+	margin-bottom: 50px;
 }
 
 #fullpage p {}
@@ -194,6 +194,9 @@ nav ul li {
 .p-txt a + a {
 	margin-left: 15px;
 }
+.index_sns {margin-bottom: 30px; margin-left: -15px; }
+.index_sns img {width: 10%; display: inline-block; text-align: center;  }
+.index_sns > .blog img {width: 7%; display: inline-block; margin-left: 10px;  }
 @media all and (max-width: 1024px) {
     #logo .name {font-size: 2vw; line-height: 80px; text-align: center; padding: 100px 0; }
     
