@@ -1,240 +1,181 @@
 <!DOCTYPE html>
-<html lang="ko">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
-    <title>포트폴리오</title>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-KZGNFW2');</script>
-    <!-- End Google Tag Manager -->
-    <!-- favicon -->
-    <link rel="icon" type="imag/png" href="imgs/favicon.png">
-    <!-- web font  -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- fontawesome -->
-    <script src="https://kit.fontawesome.com/e75d5f7ac3.js" crossorigin="anonymous"></script>
-    <!-- css -->
-    <link rel="stylesheet" href="css/style.css">
-    <!-- script -->
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <script src="js/main.js" defer></script>
-    <title>포트폴리오</title>
-    <link rel="short icon" href="img/2014.ico">
-    
-</head>
-
-<body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KZGNFW2"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-   <nav class="navbar">
-        <div class="navbar_logo">
-<!--           <i class="fab fa-accusoft"></i>-->
-            <i class="fas fa-battery-full"></i>
-            <a href="#">PORTFOLIO</a>
+<html>
+    <head>
+        <title>About Me</title>
+        <link rel="short icon" href="images/2014.ico">
+		<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+		<link href="https://fonts.googleapis.com/css?family=Merriweather:400,900" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    </head>
+    <body>
+        <div class="portrait">
+<!--            <strong>Photo by mom</strong>-->
         </div>
-        <ul class="navbar_menu">
-           <li><a href="../index.html" target="_blank">홈</a></li>
-           <li><a href="../RESUME/index.html" target="_blank">이력서</a></li>
-           <li><a href="#" onclick="openPopup()">미니홈피</a></li>
-           <li><a href="#">포트폴리오</a></li>
-<!--           <li><a href="#">Bookings</a></li>-->
-        </ul>
-        <ul class="navbar_icons">
-            <li><a href="https://bit.ly/3IUmQTC" target="_blank"><i class="fab fa-instagram"></i></a></li>
-            <li><a href="https://bit.ly/3IWxs4u" target="_blank"><i class="fab fa-facebook"></i></a></li>
-        </ul>
-        
-        <a href="#" class="navbar_togleBtn">
-            <i class="fas fa-bars"></i>
-        </a>
-    </nav>
-    <!-- Work -->
-    <section id="work" class="section">
-        <div class="section_container">
-            <h2>PORTFOLIO</h2>
-            <h3>Projects</h3>
-            <div class="work_nav">
-                <button class="work_btn selected" data-filter="*">All <span class="work_num">10</span>
-                </button>
-                <button class="work_btn" data-filter="MARKETING">MARKETING <span class="work_num">2</span>
-                </button>
-                <button class="work_btn" data-filter="DESIGN">DESIGN<span class="work_num">2</span>
-                </button>
-                <button class="work_btn" data-filter="WEB">WEB <span class="work_num">5</span>
-                </button>
-                <button class="work_btn" data-filter="Etc">Etc <span class="work_num">1</span></button>
-            </div>
-            <div class="work_project">
-                <div class="project" target="_blank" data-type="MARKETING">
-                    <img class="project_img" src="img/project01.png" alt="">
-                    <div class="project_text">
-                        <div>
-                            <h4>PROJECT</h4>
-                            <p>광고 분석 및 개인 역량  <br> 마케팅 포트폴리오</p>
-                        </div>
-                        <div class="">
-<!--                            <a class="p-2" href="" target="blank">기획</a>-->
-                            <a class="p-2 ml-2" href="pdf/portfolio.pdf" target="_blank">PDF</a>
-<!--                            <a class="p-2 ml-2" href="" target="blank">코딩</a>-->
-                        </div>
-                    </div>
+        <div class="profile">
+            <div class="profile-title">
+                I'm a 
+                <div class="job">
+                    <ul class="job-list">
+                        <li>Marketer</li>
+                        <li>Designer</li>
+                        <li>Dreamer</li>
+                        <li>Creator</li>
+                        <li>Marketer</li>
+                    </ul>
                 </div>
-                <div class="project" target="_blank" data-type="MARKETING">
-                    <img class="project_img" src="img/project02.png" alt="">
-                    <div class="project_text">
-                        <div>
-                            <h4>PROJECT</h4>
-                            <p>마케팅 솔루션 <br> 땡큐캠핑</p>
-                        </div>
-                        <div class="">
-<!--                            <a class="p-2" href="" target="blank">기획</a>-->
-                            <a class="p-2 ml-2" href="pdf/Thankyou.pdf" target="_blank">PDF</a>
-<!--                            <a class="p-2 ml-2" href="" target="blank">코딩</a>-->
-                        </div>
-                    </div>
-                </div>
-                <div class="project" target="_blank" data-type="DESIGN">
-                    <img class="project_img" src="img/project03.png" alt="">
-                    <div class="project_text">
-                        <div>
-                            <h4>PROJECT</h4>
-                            <p>MUSICPLANT <br>랜딩페이지&#40;event&#41;</p>
-                        </div>
-                        <div class="">
-<!--                            <a class="p-2" href="" target="blank">기획</a>-->
-                            <a class="p-2 ml-2" href="https://www.figma.com/file/aO2uv4plNAnpG1lFWVhrDW/MUSICPLANT?node-id=0%3A1" target="_blank">디자인</a>
-<!--                            <a class="p-2 ml-2" href="" target="blank">코딩</a>-->
-                        </div>
-                    </div>
-                </div>
-                <div class="project" target="_blank" data-type="DESIGN">
-                    <img class="project_img" src="img/project04.png" alt="">
-                    <div class="project_text">
-                        <div>
-                            <h4>PROJECT</h4>
-                            <p>'아지랑이' phone case<br>랜딩페이지</p>
-                        </div>
-                        <div class="">
-<!--                            <a class="p-2" href="" target="blank">기획</a>-->
-                            <a class="p-2 ml-2" href="https://www.figma.com/file/l3UomAXpchvbkZvBRASg3R/AZRANGE?node-id=0%3A1" target="_blank">디자인</a>
-<!--                            <a class="p-2 ml-2" href="" target="blank">코딩</a>-->
-                        </div>
-                    </div>
-                </div>
-                <div class="project" target="_blank" data-type="DESIGN">
-                    <img class="project_img" src="img/project05.png" alt="">
-                    <div class="project_text">
-                        <div>
-                            <h4>PROJECT</h4>
-                            <p>아지캣스토어 <br>상품 상세페이지</p>
-                        </div>
-                        <div class="">
-<!--                            <a class="p-2" href="" target="blank">기획</a>-->
-                            <a class="p-2 ml-2" href="https://www.figma.com/file/u5LccwbHXBTz0UEdegboX2/AGECATSTORE?node-id=0%3A1" target="_blank">디자인</a>
-<!--                            <a class="p-2 ml-2" href="" target="blank">코딩</a>-->
-                        </div>
-                    </div>
-                </div>
-                <div class="project" target="_blank" data-type="WEB">
-                    <img class="project_img" src="img/project06.png" alt="">
-                    <div class="project_text">
-                        <div>
-                            <h4>PROJECT</h4>
-                            <p>클론코딩 <br> 청정원 홈페이지</p>
-                        </div>
-                        <div class="">
-<!--                            <a class="p-2" href="" target="blank">..</a>-->
-                            <a href="../CJW/cjw.html" target="_blank" class="p-2 ml-2">WEB</a>
-<!--                            <a class="p-2 ml-2" href="" target="blank">..</a>-->
-                        </div>
-                    </div>
-                </div>
-                <div class="project" target="_blank"data-type="WEB">
-                    <img class="project_img" src="img/project07.png" alt="">
-                    <div class="project_text">
-                        <div>
-                            <h4>PROJECT</h4>
-                            <p>클론코딩 <br> Starbucks</p>
-                        </div>
-                        <div class="">
-<!--                            <a class="p-2" href="" target="blank">..</a>-->
-                            <a href="../starbucks/starbucks.html" target="_blank" class="p-2 ml-2" >WEB</a>
-<!--                            <a class="p-2 ml-2" href="" target="blank">..</a>-->
-                        </div>
-                    </div>
-                </div>
-                <div class="project" target="_blank" data-type="Etc">
-                    <img class="project_img" src="img/project08.png" alt="">
-                    <div class="project_text">
-                        <div class="">
-                            <h4>PROJECT</h4>
-                            <p>클론코딩 &amp; 유튜브 영상 제작 <br> ADOBE</p>
-                        </div>
-                        <div class="">
-<!--                            <a class="p-2" href="" target="blank">..</a>-->
-                            <a href="../youtube/youtube.html" class="p-2 ml-2" target="_blank">VIDEO</a>
-<!--                            <a class="p-2 ml-2" href="" target="blank">..</a>-->
-                        </div>
-                    </div>
-                </div>
-                <div class="project" target="_blank" data-type="WEB">
-                    <img class="project_img" src="img/project09.png" alt="">
-                    <div class="project_text">
-                        <div class="">
-                            <h4>PROJECT</h4>
-                            <p>클론코딩 <br> 가짜 사나이</p>
-                        </div>
-                        <div class="">
-<!--                            <a class="p-2" href="" target="blank">..</a>-->
-                            <a href="../sanai/sanai.html" class="p-2 ml-2" target="_blank">WEB</a>
-<!--                            <a class="p-2 ml-2" href="" target="blank">..</a>-->
-                        </div>
-                    </div>
-                </div>
-                <div class="project" target="_blank" data-type="WEB">
-                    <img class="project_img" src="img/project10.png" alt="">
-                    <div class="project_text">
-                        <div class="">
-                            <h4>PROJECT</h4>
-                            <p>클론코딩 <br> Cyworld</p>
-                        </div>
-                        <div class="">
-<!--                            <a class="p-2" href="" target="blank">..</a>-->
-                            <a href="#" onclick="openPopup()" class="p-2 ml-2">WEB</a>
-<!--                            <a class="p-2 ml-2" href="" target="blank">..</a>-->
-                        </div>
-                    </div>
-                </div>
-                <div class="project" target="_blank" data-type="WEB">
-                    <img class="project_img" src="img/project11.png" alt="">
-                    <div class="project_text">
-                        <div class="">
-                            <h4>PROJECT</h4>
-                            <p>클론코딩 <br> Login Page</p>
-                        </div>
-                        <div class="">
-                            <a href="../login/login.html" class="p-2 ml-2" target="_blank">WEB</a>
-                        </div>
-                    </div>
+                <h1>Hyun Jong</h1>
+                <p>유현종(male)</p>
+               <p>1996.01.06</p>
+               <p>서울시 은평구</p>
+                <div class="icons">
+                    <a class="twitter" href="#" target="">Twitter</a>
+                    <a class="facebook" href="https://bit.ly/3IWxs4u" target="_blank">Facebook</a>
+                    <a class="pinterest" href="https://bit.ly/3IUmQTC" target="_blank">instargram</a>
                 </div>
             </div>
-        </div>
-    </section>
-    <script>
-        function openPopup(){
-        window.open("../cyworld/home.html", "new", "toolbar=no, menubar=no, scrollbars=no, resizable=no, width=1280, height=721, left=0, top=0" );
-        }
-         
+            <div class="section">
+                <h2 class="section-title">
+                    Work Experience
+                </h2>
+                <div class="time">
+                    <div class="time-item">
+                        <h2>2013</h2>
+                        <p>청담웨딩홀</p>
+                        
+                    </div>
+                    <div class="time-item">
+                        <h2>2015</h2>
+                        <p>㈜텐마인즈 코리아브레오</p>
+                        <p>- 사무보조</p>
+                        <p>- 백화점 판매</p>
+                    </div>
+                    <div class="time-item">
+                        <h2>2016</h2>
+                        <p>롯데월드</p>
+                        <p>- 탑승안내</p>
+                        <p>- 스케줄관리</p>
+                    </div>
+                    <div class="time-item">
+                        <h2>2017</h2>
+                        <p>㈜파리크라상 라그릴리아</p>
+                        <p>- 3rd Cook</p>
+                    </div>
+                    <div class="time-item">
+                        <h2>2019</h2>
+                        <p>코엑스 아쿠아리움</p>
+                        <p>- Event STAFF</p>
+                    </div>
+                    <div class="time-item">
+                        <h2>2020</h2>
+                        <p>스튜디오나우</p>
+                        <p>- 블로그 포스팅</p>
+                    </div>
+                    <div class="time-item">
+                        <h2>2020-2022</h2>
+                        <p>뮤직플랜트</p>
+                        <p>- 사무실 (포토샵 및 이커머스)</p>
+                        <p>- 아이돌 가수 팬싸인회 진행</p>
+                        <p>- 매장(판매,진열)</p>
+                    </div>
+                    <div class="time-item">
+                        <h2>2022-2023 </h2>
+                        <p>카페24</p>
+                        <p>- 퍼포먼스마케팅</p>
+                    </div>
+                    <div class="time-item">
+                        <h2>-</h2>
+                        <p>박람회</p>
+                        <p>- 경향하우징페어</p>
+                        <p>- 크리에이터 페스티벌</p>
+                        <p>- 케이캣페어</p>
+                        <p>- 씨덱스 학술회</p>
+                        <p>- 나노코리아</p>
+                        <p>- 반다이남코코리아 프라모델 피규어 </p>
+                    </div>
+                    <div class="time-item">
+                        <h2>봉사활동</h2>
+                        <p>궁중문화축전</p>
+                        <p>- 역사재현 엑스트라(호위군)</p>
+                    </div>
+<!--
+                     <div class="time-item">
+                        <h2>2020</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tinci</p>
+                    </div>
+-->
+                </div>
+            </div>
+            <div class="section">
+                <h2 class="section-title">
+                    Skills
+                </h2>
+                <div class="skills">
+                    <div class="skills-item" data-score="70">Excel</div>
+                    <div class="skills-item" data-score="60">Powerpoint</div>
+                    <div class="skills-item" data-score="60">Word</div>
+                    <div class="skills-item" data-score="80">GA</div>
+                    <div class="skills-item" data-score="80">GTM</div>
+                    <div class="skills-item" data-score="100">Photoshop</div>
+                    <div class="skills-item" data-score="60">Illustrator</div>
+                    <div class="skills-item" data-score="50">Premiere PRo</div>
+                    <div class="skills-item" data-score="70">HTML+CSS</div>
+                    
+<!--
+                    <div class="skills-item" data-score="60">
+                        ES6
+                    </div>
+-->
+<!--
+                    <div class="skills-item" data-score="50">
+                        React
+                    </div>
+                    <div class="skills-item" data-score="50">
+                        Design
+                    </div>
+-->
+                </div>
+            </div>
+            <div class="section">
+                <h2 class="section-title">
+                    LICENSE
+                </h2>
+                <div>
+                    <p class="LICENSE">검색광고마케터 1급 </p>
+                    <p class="LICENSE">META BLUEPRINT </p>
+                    <p class="LICENSE">GAIQ </p>
+                    <p class="LICENSE">GTQ 포토샵 1급 </p>
+                    <p class="LICENSE">컴퓨터활용능력 1급 </p>
+                    <p class="LICENSE">한식조리기능사 </p>
+                    <p class="LICENSE">운전면허 1종 </p>
+                </div>
+<!--
+                <dl>
+                    <dt>Cell.</dt><dd>+82)1064252654</dd>
+                    <dt>Email.</dt><dd>guswhd956@naver.com</dd>
+                    <dt>Web.</dt><dd>www.veamcamp.com</dd>
+                    <dt>kakao Talk</dt><dd>guswhd956</dd>
+                </dl>
+-->
+            </div>
+            <div class="section">
+                <h2 class="section-title">
+                    Contacts
+                </h2>
+                <dl>
+                    <dt>Cell.</dt><dd>+82)1064252654</dd>
+                    <dt>Email.</dt><dd>guswhd956@naver.com</dd>
+<!--                    <dt>Web.</dt><dd>www.veamcamp.com</dd>-->
+                    <dt>kakao Talk</dt><dd>guswhd956</dd>
+                </dl>
+            </div>
+        </div>  
+    <script type="text/javascript">
+        $(".twitter").on('click', function(){
+            alert('트위터 채널은 없습니다.');
+        });    
     </script>
-
-</body>
-
+        
+    </body>
 </html>
